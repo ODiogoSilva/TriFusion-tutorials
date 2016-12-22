@@ -1,0 +1,4 @@
+# Example of a text file for taxa selection in TriFusion
+Agaricus_bisporus
+Botrytis_cinerea
+Coniophora_puteana 
