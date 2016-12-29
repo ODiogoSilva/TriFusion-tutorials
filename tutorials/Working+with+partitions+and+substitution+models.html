@@ -11746,6 +11746,60 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<script>
+code_show=true; 
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+} 
+$( document ).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11764,6 +11818,7 @@ div#notebook {
 <li><a href="#How-to-change-the-partition&#39;s-name">How to change the partition's name;</a></li>
 <li><a href="#How-to-edit-the-substitution-model-for-one-or-all-partitions">How to edit the substiution model for one or all partitions;</a></li>
 </ul>
+<p>The data required to replicate this tutorial can be downloaded <a href="https://github.com/ODiogoSilva/TriFusion-tutorials/raw/master/tutorials/Datasets/Process/Concatenation_data/concatenated.zip">here</a>.</p>
 <h1 id="How-to-import-partitions">How to import partitions<a class="anchor-link" href="#How-to-import-partitions">&#182;</a></h1><p>Partitions can be either defined in the input alignment files themselves, or provided <em>a posteriori</em> with a partitions file.</p>
 <h2 id="From-the-alignment-file">From the alignment file<a class="anchor-link" href="#From-the-alignment-file">&#182;</a></h2><p><strong>NOTE: This is only supported for alignment files in Nexus format.</strong></p>
 <p>Nexus alignment files often have a <em>charset</em> block after the alignment matrix where its partitions are described.</p>
@@ -11771,36 +11826,47 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># NEXUS</span>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p># NEXUS</p>
+<p>Begin data;
+    dimensions ntax=20 nchar=425 ;</p>
 
-<span class="n">Begin</span> <span class="n">data</span><span class="p">;</span>
-	<span class="n">dimensions</span> <span class="n">ntax</span><span class="o">=</span><span class="mi">20</span> <span class="n">nchar</span><span class="o">=</span><span class="mi">425</span> <span class="p">;</span>
-	<span class="nb">format</span> <span class="n">datatype</span><span class="o">=</span><span class="n">DNA</span> <span class="n">interleave</span><span class="o">=</span><span class="n">no</span> <span class="n">gap</span><span class="o">=-</span> <span class="n">missing</span><span class="o">=</span><span class="n">n</span> <span class="p">;</span>
-	<span class="n">matrix</span>
-<span class="p">(</span><span class="o">...</span> <span class="n">alignment</span> <span class="n">matrix</span><span class="o">...</span><span class="p">)</span>
-<span class="p">;</span>
-	<span class="n">end</span><span class="p">;</span>
-    
-<span class="n">begin</span> <span class="n">mrbayes</span><span class="p">;</span>
-	<span class="n">charset</span> <span class="n">Teste1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">85</span><span class="p">;</span>
-	<span class="n">charset</span> <span class="n">Teste2</span> <span class="o">=</span> <span class="mi">86</span><span class="o">-</span><span class="mi">170</span><span class="p">;</span>
-	<span class="n">charset</span> <span class="n">Teste3</span> <span class="o">=</span> <span class="mi">171</span><span class="o">-</span><span class="mi">255</span><span class="p">;</span>
-	<span class="n">charset</span> <span class="n">Teste4</span> <span class="o">=</span> <span class="mi">256</span><span class="o">-</span><span class="mi">340</span><span class="p">;</span>
-	<span class="n">charset</span> <span class="n">Teste5</span> <span class="o">=</span> <span class="mi">341</span><span class="o">-</span><span class="mi">425</span><span class="p">;</span>
-	<span class="n">partition</span> <span class="n">part</span> <span class="o">=</span> <span class="mi">5</span><span class="p">:</span> <span class="n">Teste1</span><span class="p">,</span> <span class="n">Teste2</span><span class="p">,</span> <span class="n">Teste3</span><span class="p">,</span> <span class="n">Teste4</span><span class="p">,</span> <span class="n">Teste5</span><span class="p">;</span>
-	<span class="nb">set</span> <span class="n">partition</span><span class="o">=</span><span class="n">part</span><span class="p">;</span>
-<span class="n">end</span><span class="p">;</span>
-</pre></div>
+<pre><code>format datatype=DNA interleave=no gap=- missing=n ;
+
+matrix
+
+</code></pre>
+<p>(... alignment matrix...)</p>
+<p>;</p>
+
+<pre><code>end;
+
+</code></pre>
+<p>begin mrbayes;</p>
+
+<pre><code>charset Teste1 = 1-85;
+
+charset Teste2 = 86-170;
+
+charset Teste3 = 171-255;
+
+charset Teste4 = 256-340;
+
+charset Teste5 = 341-425;
+
+partition part = 5: Teste1, Teste2, Teste3, Teste4, Teste5;
+
+set partition=part;
+
+</code></pre>
+<p>end;</p>
 
 </div>
 </div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -11808,30 +11874,30 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this case, 5 partions were defined using the <em>charset</em> keywords. When this file is loaded into TriFusion, this block is used to define the partitions in the <em>Partitions</em> tab of TriFusion's sidepanel.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_nexus_imported.png"></p>
-<h2 id="From-a-partitions-file">From a partitions file<a class="anchor-link" href="#From-a-partitions-file">&#182;</a></h2><p>TriFusion can import partitions schemes formatted in one of two popular format. Here I'll exemplify how partitions can be imported in either case after loading a concatenated file of 5 alignments into TriFusion, named <i>concatenated_file.fas</i>.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_nexus_imported.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial6_nexus_input.gif">
+</figure><h2 id="From-a-partitions-file">From a partitions file<a class="anchor-link" href="#From-a-partitions-file">&#182;</a></h2><p>TriFusion can import partitions schemes formatted in one of two popular format. Here I'll exemplify how partitions can be imported in either case after loading a concatenated file of 5 alignments into TriFusion, named <i>concatenated_file.fas</i>.</p>
 <h3 id="Nexus-charset-block">Nexus charset block<a class="anchor-link" href="#Nexus-charset-block">&#182;</a></h3><p>A Nexus partitions file is a simple text file containing the <em>charset</em> block defining the partitions for an alignment file. In our case, the partition file (named <i>concatenated_file.nxpart</i>) would look something like this:</p>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># charset [name of partitions] = [partition-range];</span>
-<span class="n">charset</span> <span class="n">Teste1</span><span class="o">.</span><span class="n">fas</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">85</span><span class="p">;</span>
-<span class="n">charset</span> <span class="n">Teste2</span><span class="o">.</span><span class="n">fas</span> <span class="o">=</span> <span class="mi">86</span><span class="o">-</span><span class="mi">170</span><span class="p">;</span>
-<span class="n">charset</span> <span class="n">Teste3</span><span class="o">.</span><span class="n">fas</span> <span class="o">=</span> <span class="mi">171</span><span class="o">-</span><span class="mi">255</span><span class="p">;</span>
-<span class="n">charset</span> <span class="n">Teste4</span><span class="o">.</span><span class="n">fas</span> <span class="o">=</span> <span class="mi">256</span><span class="o">-</span><span class="mi">340</span><span class="p">;</span>
-<span class="n">charset</span> <span class="n">Teste5</span><span class="o">.</span><span class="n">fas</span> <span class="o">=</span> <span class="mi">341</span><span class="o">-</span><span class="mi">425</span><span class="p">;</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p># charset [name of partitions] = [partition-range];</p>
+<p>charset Teste1.fas = 1-85;</p>
+<p>charset Teste2.fas = 86-170;</p>
+<p>charset Teste3.fas = 171-255;</p>
+<p>charset Teste4.fas = 256-340;</p>
+<p>charset Teste5.fas = 341-425;</p>
 
 </div>
 </div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -11843,22 +11909,19 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">GTR</span><span class="p">,</span> <span class="n">BaseConc1</span><span class="o">.</span><span class="n">fas</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="mi">85</span>
-<span class="n">GTR</span><span class="p">,</span> <span class="n">BaseConc2</span><span class="o">.</span><span class="n">fas</span> <span class="o">=</span> <span class="mi">86</span><span class="o">-</span><span class="mi">170</span>
-<span class="n">GTR</span><span class="p">,</span> <span class="n">BaseConc3</span><span class="o">.</span><span class="n">fas</span> <span class="o">=</span> <span class="mi">171</span><span class="o">-</span><span class="mi">255</span>
-<span class="n">GTR</span><span class="p">,</span> <span class="n">BaseConc4</span><span class="o">.</span><span class="n">fas</span> <span class="o">=</span> <span class="mi">256</span><span class="o">-</span><span class="mi">340</span>
-<span class="n">GTR</span><span class="p">,</span> <span class="n">BaseConc5</span><span class="o">.</span><span class="n">fas</span> <span class="o">=</span> <span class="mi">341</span><span class="o">-</span><span class="mi">425</span>
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>GTR, BaseConc1.fas = 1-85</p>
+<p>GTR, BaseConc2.fas = 86-170</p>
+<p>GTR, BaseConc3.fas = 171-255</p>
+<p>GTR, BaseConc4.fas = 256-340</p>
+<p>GTR, BaseConc5.fas = 341-425</p>
 
 </div>
 </div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -11866,14 +11929,20 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Importing-the-partition-file">Importing the partition file<a class="anchor-link" href="#Importing-the-partition-file">&#182;</a></h3><p>To import this partition scheme, and assuming that our <i>concatenated_file.fas</i> is already loaded into TriFusion, navigate to <em>Menu</em> &gt; <em>Open/View Data</em> and click the <em>Partitions</em> tab.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_import_nexus_initial.png"></p>
-<p>There is already a single partition defined because TriFusion always attributes one partitions for each input alignment by default. However, by providing a partiton scheme, any previously defined partitions will be discarded. The partition scheme can be provided by clicking the <strong>+</strong> button at the bottom of the panel and selecting the partition file in the filechooser. You can try to import either the Nexus or RAxML partitions file, since the result will be the same.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_import_nexus_initial.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial6_import_file.gif">
+</figure><p>There is already a single partition defined because TriFusion always attributes one partition for each input alignment by default. However, by providing a partiton scheme, any previously defined partitions will be discarded. The partition scheme can be provided by clicking the <strong>+</strong> button at the bottom of the panel and selecting the partition file in the filechooser. You can try to import either the Nexus or RAxML partitions file, since the result will be the same.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_selec_nexpart.png"></p>
 <p>After selecting the partition file, TriFusion will perform several checks to ensure the consistency of the partitions according to the alignment file. If all checks out, the 5 defined partitions will appear in the <em>Partitions</em> tab.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_nexus_imported.png"></p>
 <h1 id="How-to-create/split-partitions">How to create/split partitions<a class="anchor-link" href="#How-to-create/split-partitions">&#182;</a></h1><p>Let's assume we still have the <i>concatenated_file.fas</i> without defined partitions loaded into TriFusion. To create/split partitions, navigate to <em>Menu</em> &gt; <em>Open/View Data</em> and click on the <em>Partitions</em> tab.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_import_nexus_initial.png"></p>
-<p>By default, TriFusion creates a single partition for each input alignment file. This means that when a new partition is created, it is actually splitted from an existing partition. In this way, we can re-create the 5 partitions that were defined in the sections above. However, as you will see, this taks is more suitable for small pontual modification to the partition scheme than to define partitions from scratch. For larger partitions schemes, using partition files is always easier and more convenient.
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_import_nexus_initial.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial6_split_parts.gif">
+</figure><p>By default, TriFusion creates a single partition for each input alignment file. This means that when a new partition is created, it is actually splitted from an existing partition. In this way, we can re-create the 5 partitions that were defined in the sections above. However, as you will see, this taks is more suitable for small pontual modification to the partition scheme than to define partitions from scratch. For larger partitions schemes, using partition files is always easier and more convenient.
 What can be done 
 To create the first partition, which should have the range from position 1 to 85, select the <i>concatenated_file.fas</i> partition button. When you do, the <em>Scissor</em> button at the bottom of the panel should become available.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_scissor_available.png"></p>
@@ -11886,26 +11955,38 @@ To create the first partition, which should have the range from position 1 to 85
 <p>Repeat this process until you eventually reach the last split, where the name of the second partition is actually <em>Part5</em>.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_last_split.png"></p>
 <h1 id="How-to-merge-pre-existing-partitions">How to merge pre-existing partitions<a class="anchor-link" href="#How-to-merge-pre-existing-partitions">&#182;</a></h1><p>Partitions in TriFusion cannot be actually removed, since any part of the alignment must be covered by one partition. However, partitions can be merged to produce a similar effect. For instance, if we load the <i>concatenated_file.nex</i> file into TriFusion, it will automatically set 5 partitions for this alignment.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_nexus_imported.png"></p>
-<p>If you want to remove, say, the last two partitions, you can merge them with the last standing partition. Click on the partition buttons <em>Part3</em>, <em>Part4</em> and <em>Part5</em> and the <em>Merge</em> button at the end of the panel should become available.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_nexus_imported.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial6_merge_parts.gif">
+</figure><p>If you want to remove, say, the last two partitions, you can merge them with the last standing partition. Click on the partition buttons <em>Part3</em>, <em>Part4</em> and <em>Part5</em> and the <em>Merge</em> button at the end of the panel should become available.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_merge_available.png"></p>
 <p>Clicking the <em>Merge</em> button will ask you for the name of the new partition. We'll name it <i>end_partition</i>.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_merge_name.png"></p>
 <p>This will effectively remove the last two partitions, and append their range to the previouus <em>Part3</em> partition. The merge procedure can be combined with the split procedure to fine tune partition ranges.</p>
 <p>Ultimately, you can "remove" all partitions by merging all partitions in a single one. For this, simply select all partitions and click the <em>Merge</em> button.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_merge_all.png"></p>
-<p>Then provide a name for the single partition, and that's it.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_merge_all.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial6_merge_all_parts.gif">
+</figure><p>Then provide a name for the single partition, and that's it.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_single_part.png"></p>
 <h1 id="How-to-change-the-partition's-name">How to change the partition's name<a class="anchor-link" href="#How-to-change-the-partition's-name">&#182;</a></h1><p>Partition names can be easily changed in TriFusion. Navigate to <em>Menu</em> &gt; <em>Open/View Data</em> and click on the <em>Partitions</em> tab.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_nexus_imported.png"></p>
-<p>To change the name of one partition, say <em>Test1</em>, click on the corresponding <em>Pencil</em> button. The current name should appear in a text field under the <em>Details</em> section.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_nexus_imported.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial6_change_name.gif">
+</figure><p>To change the name of one partition, say <em>Test1</em>, click on the corresponding <em>Pencil</em> button. The current name should appear in a text field under the <em>Details</em> section.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_edit_dialog.png"></p>
 <p>Then, modify the name no your liking and press <em>Enter</em> to change it.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_name_change.png"></p>
 <h1 id="How-to-edit-the-substitution-model-for-one-or-all-partitions">How to edit the substitution model for one or all partitions<a class="anchor-link" href="#How-to-edit-the-substitution-model-for-one-or-all-partitions">&#182;</a></h1><p>TriFusion supports the specificiation of substitution models and codon partitions. However, note that this information is can only be included in Nexus output formats or in the RAxML partition file that is generated for the Phylip output format.</p>
 <p>To set/change the substitution model and/or codon partitions of a partition, navigate to <em>Menu</em> &gt; <em>Open/View Data</em> and click on the <em>Partitions</em> tab.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_nexus_imported.png"></p>
-<p>Then, click on the <em>Pencil</em> button of any partition to open the edition dialog.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_nexus_imported.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial6_change_models.gif">
+</figure><p>Then, click on the <em>Pencil</em> button of any partition to open the edition dialog.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_edit_dialog.png"></p>
 <p>You can choose a codon partition scheme using the drop down menu under the <em>Codon partitions</em> section. All possible codon partition schemes are listed, included the option to have no sub-partitions. In This example, lets create separate partitions for each codon position by selecting the <em>1 + 2 + 3</em> value.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/partitions_codon_models.png"></p>
@@ -11915,6 +11996,109 @@ To create the first partition, which should have the range from position 1 to 85
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<span class="kd">var</span> <span class="nx">getGif</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.animation&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;here&quot;</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">);</span>
+        <span class="nx">gif</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">gif</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="nx">getGif</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gif</span><span class="p">)</span>
+
+<span class="c1">//Preload all the GIF.</span>
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="p">[];</span>
+  
+<span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">gif</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>     <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">gif</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+    <span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     
+    <span class="kd">var</span> <span class="nx">$this</span>   <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+    <span class="nx">$index</span>  <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">index</span><span class="p">(),</span>
+    <span class="nx">$img</span>    <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">),</span>
+    <span class="nx">$imgSrc</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">),</span>
+    <span class="nx">$imgAlt</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">),</span>
+    <span class="nx">$imgExt</span> <span class="o">=</span> <span class="nx">$imgAlt</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+           
+    <span class="k">if</span><span class="p">(</span><span class="nx">$imgExt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;gif&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">)).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$imgSrc</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$imgAlt</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">));</span>
+    <span class="p">}</span> 
+<span class="p">});</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="3e7cd3a4-265c-489b-b074-48cbf892a1df"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#3e7cd3a4-265c-489b-b074-48cbf892a1df');
+var getGif = function() {
+    var gif = [];
+    $('.animation').each(function() {
+        console.log("here")
+        var data = $(this).data('alt');
+        gif.push(data);
+    });
+    return gif;
+}
+var gif = getGif();
+console.log(gif)
+
+//Preload all the GIF.
+var image = [];
+  
+$.each(gif, function(index) {
+    image[index]     = new Image();
+    image[index].src = gif[index];
+    });
+
+$('figure').on('click', function() {
+     
+    var $this   = $(this),
+    $index  = $this.index(),
+    $img    = $this.children('img'),
+    $imgSrc = $img.attr('src'),
+    $imgAlt = $img.attr('data-alt'),
+    $imgExt = $imgAlt.split('.');
+           
+    if($imgExt[1] === 'gif') {
+        $img.attr('src', $img.data('alt')).attr('data-alt', $imgSrc);
+    } else {
+        $img.attr('src', $imgAlt).attr('data-alt', $img.data('alt'));
+    } 
+});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
