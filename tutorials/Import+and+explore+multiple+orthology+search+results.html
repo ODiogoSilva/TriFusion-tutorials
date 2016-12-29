@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Import and explore multiple orthology search results</title>
+<title>Import+and+explore+multiple+orthology+search+results_animated</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -11746,6 +11746,60 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[54]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<script>
+code_show=true; 
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+} 
+$( document ).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11788,11 +11842,11 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you are loading group files from previous orthology search runs, they will be found inside the specified output directory, in the <i>Orthology_results</i> directory.</p>
-<p>To load the data, navigate to the <strong>Orthology</strong> screen and click the <em>Explore</em> tab button on the left of the screen.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_screen.png"></p>
-<p>Then click the "<strong>+</strong>" button on the top left of the screen to open the filechooser. Navigate to the directory containing the group files and then select the desired files. In this case, we will selected the three group files generated in a previous search operation that were performed with inflation values 2, 3 and 4.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_group_files.png"></p>
-<p>Once the group files are loaded into TriFusion, several descriptive statistics will populate the screen.</p>
+<p>To load the data, navigate to the <strong>Orthology</strong> screen and click the <em>Explore</em> tab button on the left of the screen. Then click the "<strong>+</strong>" button on the top left of the screen to open the filechooser. Navigate to the directory containing the group files and then select the desired files. In this case, we will selected the three group files generated in a previous search operation that were performed with inflation values 2, 3 and 4.</p>
+<figure>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/explore_add_groups.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/orto_tutorial3_load_groups.gif">
+</figure><p>Once the group files are loaded into TriFusion, several descriptive statistics will populate the screen.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_cards.png"></p>
 <p>To the left, the loaded group files are listed under the <em>Group file(s)</em> section, where they can be selected to visualize the statistics specific to that group. They can also be removed by clicking the trash bin red button. On the remaining of the screen, general statistics and information on the filtered orthologs are presented for the currently selected group file.</p>
 <p>The <em>General information</em> section informs the total number of proteins, taxa and ortholog groups contained in the group file.</p>
@@ -11802,17 +11856,26 @@ div#notebook {
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_change_group.png"></p>
 <p>As you can see, the numbers of total and filtered ortholog groups changed slightly, which is a result from using different inflation values during the search operation.</p>
 <h1 id="Change-the-orthology-filters">Change the orthology filters<a class="anchor-link" href="#Change-the-orthology-filters">&#182;</a></h1><p>A common procedure during the exploration of the orthology search results is the modification of the ortholog filters. To change the filters, click the <strong>Change filters</strong> button in the bottom of the <em>Filtered orthologs</em> section. This will open the ortholog filters dialog where you can change the maximum number of gene copies and minimum number of taxa for the ortholog groups.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_expore_change_filters.png"></p>
-<p>Let's maintain the gene copy filter and still only allow single copy genes, but relaxed the minimum number of taxa to half of the data set (5). The <em>Apply filter to all group files</em> check box will also remain active to update all group files with the new filter. When all filters are set, click the <strong>Ok</strong> button to update.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_expore_change_filters.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/orto_tutorial3_change_filters.gif">
+</figure><p>Let's maintain the gene copy filter and still only allow single copy genes, but relaxed the minimum number of taxa to half of the data set (5). The <em>Apply filter to all group files</em> check box will also remain active to update all group files with the new filter. When all filters are set, click the <strong>Ok</strong> button to update.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_after_filter.png"></p>
 <p>After the application of the new filters, you can see that the number of filtered orthologs changed. The number of final orthologs for the <i>group_3.txt</i> file almost trippled when we relaxed the number of minimum taxa per ortholog group. You can also see that the filter values were updated at the bottom of the <em>Filtered orthologs</em> section.</p>
 <h1 id="Compare-ortholog-groups-among-group-files">Compare ortholog groups among group files<a class="anchor-link" href="#Compare-ortholog-groups-among-group-files">&#182;</a></h1><p>To easily compare the number of total and filtered ortholog groups among different group files, you can check he boxes to the left of the group files in the <em>Group file(s)</em> list section. To select/deselect all group files, you can also check the top checkbox. Here, let's compare all group files by selecting all and then clicking on the <strong>Compare</strong> button.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_compare.png"></p>
-<p>This will bring you to a plotting screen, where a bar plot will be displayed with the number of total and filtered ortholog groups for each group file. You can interact with the plot by pressing the left mouse buttn and dragging the plot. You can also zoom in and out using <em>Ctrl + mouse wheel</em> or by clicking the corresponding buttons on the right side panel.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_compare.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/orto_tutorial3_compare_groups.gif">
+</figure><p>This will bring you to a plotting screen, where a bar plot will be displayed with the number of total and filtered ortholog groups for each group file. You can interact with the plot by pressing the left mouse buttn and dragging the plot. You can also zoom in and out using <em>Ctrl + mouse wheel</em> or by clicking the corresponding buttons on the right side panel.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_compare_plot.png"></p>
 <p>At the top of the screen, you can see the currently active filters, which are the same we set in the previous section. You can change the filter values using the sliders. Let's try to relaxed even further the minimum number of taxa to 2. After changing the slider value, you can see that the refresh button turned red, which means that you have set different filter. To update the plot, click the refresh button.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_compare_changed_filter.png"></p>
-<p>After clicking the refresh button, the plot values will be updated. You can see now that the total number of orthologs is almost 10k for all group files and that there is almost no different between the gene filtered and final ortholog groups. Indeed, we can see that the final number of orthologs does not deviate much between group files (range between 9 141 and 10 620).</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_compare_changed_filter.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/orto_tutorial3_change_compare_filters.gif">
+</figure><p>After clicking the refresh button, the plot values will be updated. You can see now that the total number of orthologs is almost 10k for all group files and that there is almost no different between the gene filtered and final ortholog groups. Indeed, we can see that the final number of orthologs does not deviate much between group files (range between 9 141 and 10 620).</p>
 <p>You can also change which type of ortholog groups are displayed by ticking the check boxes in the <em>Display</em> section on the top right of the screen. Let's visualize only the total and final number of orthologs. To accomplish this, uncheck the <em>Gene filter</em> and <em>Species filter</em> boxes.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_compare_change_display.png"></p>
 <p>At any time, you can export the current plot in figure or table format by clicking the <strong>Export as graphics</strong> or <strong>Export as table</strong> buttons, respectively, in the right side panel. You can also export the ortholog groups into another group file, protein or nucleotide sequences by clicking the <strong>Export group</strong> button (See tutorial <a href="http://nbviewer.jupyter.org/github/ODiogoSilva/TriFusion-tutorials/blob/master/tutorials/Export%20ortholog%20groups%20into%20protein%20and%20nucleotide%20sequence%20files.ipynb">Export ortholog groups into protein and nucleotide sequence files</a>).</p>
@@ -11821,17 +11884,129 @@ div#notebook {
 <p>This will open a plot screen akin to the one displayed when comparing different group files. In this specific plot you can see, for each taxa, the proportion of ortholog groups where they are present (dark blue) or missing (light blue). The horizontal dashed red line represents the data set mean. In the top right of the screen, under the <em>Summary</em> section, you can see the total (red) and filtered (green) number of ortholog groups and taxa that are being used to generated the plot. In this case, a total of 21 777 ortholog groups across 10 taxa are being used.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_taxa_coverage.png"></p>
 <p>The plot can be interacted with by clicking and dragging and by zooming in and out. In the header of the screen, the ortholog filters can be changed. Let's change the filter setting so that only single copy genes with at least 5 taxa represented are considered.  When the filters are modified, the refresh button should turn red and must be clicked in order to update the plot.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_taxa_coverage_change_filter.png"></p>
-<p>After the plot is updated, you can see that the values in the <em>Summary</em> section of the header have also updated. This plot is now being generated with 4 688 ortholog groups across 10 taxa. We can also see that,  using these filter values, all taxa have a pretty decent proportion of available data. However, you have also the option to remove specific taxa from this analyses, by clicking the filter taxa button in the header above the refresh button. Clicking this button will display all taxa listed. These can be toggled in or out by clicking the respective buttons. For exampled, let's remove the last two taxa, <em>Thite</em> and <em>crneo</em>, by clicking them once.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_taxa_coverage_remove_taxa.png"></p>
-<p>As you can see, the bars of the removed taxa are no longer in the plot and the numbers in the <em>Summary</em> section of the header were updated to 8 active taxa.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_taxa_coverage_change_filter.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/orto_tutorial3_change_plot_filters.gif">
+</figure><p>After the plot is updated, you can see that the values in the <em>Summary</em> section of the header have also updated. This plot is now being generated with 4 688 ortholog groups across 10 taxa. We can also see that,  using these filter values, all taxa have a pretty decent proportion of available data. However, you have also the option to remove specific taxa from this analyses, by clicking the filter taxa button in the header above the refresh button. Clicking this button will display all taxa listed. These can be toggled in or out by clicking the respective buttons. For exampled, let's remove the last two taxa, <em>Thite</em> and <em>crneo</em>, by clicking them once.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_taxa_coverage_remove_taxa.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/orto_tutorial3_filter_taxa.gif">
+</figure><p>As you can see, the bars of the removed taxa are no longer in the plot and the numbers in the <em>Summary</em> section of the header were updated to 8 active taxa.</p>
 <p>As in the compare groups plot screen, all plots in the <em>Graphical visualization</em> section can be exported into figures or table formats by clicking the <strong>Export as graphics</strong> or <strong>Export as table</strong> buttons, respectively.</p>
 <h1 id="Generate-full-exploration-report-for-individual-group-files">Generate full exploration report for individual group files<a class="anchor-link" href="#Generate-full-exploration-report-for-individual-group-files">&#182;</a></h1><p>All plotting options in the <em>Graphic visualization</em> section can be automatically generated into a HTML file by clicking the <strong>Generate full report</strong> button at the bottom of the <em>Explore</em> screen.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_full_report.png"></p>
-<p>Then select the directory where the report will be generated. In that directory, an HTML file will be created where all plots will be visualized for the currently set ortholog filters.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_full_report.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/orto_tutorial3_full_report.gif">
+</figure><p>Then select the directory where the report will be generated. In that directory, an HTML file will be created where all plots will be visualized for the currently set ortholog filters.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<span class="kd">var</span> <span class="nx">getGif</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.animation&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;here&quot;</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">);</span>
+        <span class="nx">gif</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">gif</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="nx">getGif</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gif</span><span class="p">)</span>
+
+<span class="c1">//Preload all the GIF.</span>
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="p">[];</span>
+  
+<span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">gif</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>     <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">gif</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+    <span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     
+    <span class="kd">var</span> <span class="nx">$this</span>   <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+    <span class="nx">$index</span>  <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">index</span><span class="p">(),</span>
+    <span class="nx">$img</span>    <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">),</span>
+    <span class="nx">$imgSrc</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">),</span>
+    <span class="nx">$imgAlt</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">),</span>
+    <span class="nx">$imgExt</span> <span class="o">=</span> <span class="nx">$imgAlt</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+           
+    <span class="k">if</span><span class="p">(</span><span class="nx">$imgExt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;gif&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">)).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$imgSrc</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$imgAlt</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">));</span>
+    <span class="p">}</span> 
+<span class="p">});</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="0a4c900e-8be4-4283-9dc0-8ba561fabde0"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#0a4c900e-8be4-4283-9dc0-8ba561fabde0');
+var getGif = function() {
+    var gif = [];
+    $('.animation').each(function() {
+        console.log("here")
+        var data = $(this).data('alt');
+        gif.push(data);
+    });
+    return gif;
+}
+var gif = getGif();
+console.log(gif)
+
+//Preload all the GIF.
+var image = [];
+  
+$.each(gif, function(index) {
+    image[index]     = new Image();
+    image[index].src = gif[index];
+    });
+
+$('figure').on('click', function() {
+     
+    var $this   = $(this),
+    $index  = $this.index(),
+    $img    = $this.children('img'),
+    $imgSrc = $img.attr('src'),
+    $imgAlt = $img.attr('data-alt'),
+    $imgExt = $imgAlt.split('.');
+           
+    if($imgExt[1] === 'gif') {
+        $img.attr('src', $img.data('alt')).attr('data-alt', $imgSrc);
+    } else {
+        $img.attr('src', $imgAlt).attr('data-alt', $img.data('alt'));
+    } 
+});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
