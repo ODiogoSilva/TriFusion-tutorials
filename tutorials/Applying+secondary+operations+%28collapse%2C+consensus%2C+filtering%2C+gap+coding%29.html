@@ -11746,6 +11746,60 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<script>
+code_show=true; 
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+} 
+$( document ).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11768,8 +11822,11 @@ div#notebook {
 <p>Each one of these operation will be executed individually. In the end of the tutorial, a <a href="#Combination-of-three-secondary-operations">combination of collapsing, taxa filter and gap/missing data filter operations</a> will also be execute to demonstrate how these can be combined.</p>
 <h1 id="Loading-the-data">Loading the data<a class="anchor-link" href="#Loading-the-data">&#182;</a></h1><p>As already covered in a separate tutorial (see tutorial <a href="http://nbviewer.jupyter.org/github/ODiogoSilva/TriFusion-tutorials/blob/master/tutorials/The%20three%20ways%20to%20load%20data%20into%20TriFusion.ipynb">The three ways to load data into TriFusion</a>), alignment data can be loaded into TriFusion in three different ways. Here we will use the filechooser to load an entire directory where 614 alignments files are stored.</p>
 <p>Navigate to <em>Menu</em> &gt; <em>Open/View Data</em> and click the <strong>Open file(s)</strong> button. This will open the main filechooser.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_main_filechooser_dir.png"></p>
-<p>The <em>input data type</em> is already correctly set to <strong>Alignment/Sequence set</strong>, so we'll leave that as it is. Then, browse the filechooser until you find the directory containing the alignment files. In this case, all alignments are stored in a directory named "<em>Version2</em>". Since TriFusion supports the selection of directories (in which case all files inside the specified directory will be loaded), I will only select the "<em>Version2</em>" directory and click <strong>Load &amp; go back</strong> button. At the end of the data loading, a popup informs how many files were loaded.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_main_filechooser_selection.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial3_load_data.gif">
+</figure><p>The <em>input data type</em> is already correctly set to <strong>Alignment/Sequence set</strong>, so we'll leave that as it is. Then, browse the filechooser until you find the directory containing the alignment files. In this case, all alignments are stored in a directory named "<em>Version2</em>". Since TriFusion supports the selection of directories (in which case all files inside the specified directory will be loaded), I will only select the "<em>Version2</em>" directory and click <strong>Load &amp; go back</strong> button. At the end of the data loading, a popup informs how many files were loaded.</p>
 <p>All secondary operations can be applied on top of either <strong>Conversion</strong> or <strong>Concatenation</strong> main operations, but in some secondary operations one of the main operations is generally more adequate, as it will be stated below.</p>
 <h1 id="Displaying-secondary-operations">Displaying secondary operations<a class="anchor-link" href="#Displaying-secondary-operations">&#182;</a></h1><p>To display all secondary operations, click the <strong>Show additional options</strong> button. This will reveal a tabbed panel, where the secondary operations are sorted into categories (with the exception of the <em>Formatting</em> tab, which is not a secondary operation <em>per se</em>).</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_secondary_ops.png"></p>
@@ -11800,8 +11857,11 @@ div#notebook {
 <p>Finally, press the <strong>Execute</strong> button at the bottom of the <strong>Process</strong> screen to execute the consensus operation.</p>
 <h1 id="Taxa-filter">Taxa filter<a class="anchor-link" href="#Taxa-filter">&#182;</a></h1><p>Turn <strong>ON</strong> the filter switch to activate the operation. Then click the <strong>Set filters</strong> button for the <em>Taxa filter</em> option and turn <strong>ON</strong> the switch n the popup as well.</p>
 <p>The <em>Taxa filter</em> operation allows users to filter entire alignments if they contain or exclude a given set of taxa. Here, we will create a fictious case where we are interested in concatenating only alignments that contain at least all taxa with names beggining on a "C".</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_taxa_filter_new.png"></p>
-<p>The filter mode sets whether the alignments should be filtered if they <em>contain</em> or <em>exclude</em> the taxa group. By default, it is set to <em>Containing</em>, so we'll leave that unchanged.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_taxa_filter_new.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial4_taxa_filter.gif">
+</figure><p>The filter mode sets whether the alignments should be filtered if they <em>contain</em> or <em>exclude</em> the taxa group. By default, it is set to <em>Containing</em>, so we'll leave that unchanged.</p>
 <p>As you can see, there are no taxa groups yet defined so we'll need to create a new one. Click the <strong>Set taxa group</strong> button to start the dataset group creation process and then click the <strong>Set manually</strong> button. Here, select the desired taxa with names starting with the letter "C" and save the taxa group by clicking <strong>Ok</strong>.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_taxa_group.png"></p>
 <p>Once the group has been created, it will be automatically selected in the <em>Taxa filter</em> dialog. Additional groups can be created in the same way. When multiple groups have been defined, they can be selected by clicking the <strong>Use taxa group</strong> button, and then the desired group.</p>
@@ -11814,11 +11874,17 @@ div#notebook {
 <p>Turn <strong>ON</strong> the filter switch to activate the operation. Then click the <strong>Set filters</strong> button for the <em>Codon position filter</em> option and turn <strong>ON</strong> the switch on the popup as well.</p>
 <p>The <em>Codon position filter</em> operation allows you to remove certain codon positions from the output alignment. Consequently, this option is only available for nucleotide sequences. In many nucleotide alignments it is common to remove the third codon position, as it is generally much more variable and could introduce a substantial amount of phylogenenetic noise. However, this option removes the same codon positions in all input alignments. For example, if you load 10 alignments in TriFusion and exclude the 3rd codon position, you must make sure that all 10 alignments start in the 1st codon position. However, if all alignments start in the 2nd codon position, for instance, removing the 3rd codon position is still possible in TriFusion, by excluding the 2nd positions (which will actually correspond to the 3rd positions in the alignment).</p>
 <p>To exclude a given codon position, simply toggle the corresponding button off. Included position button always have a blue background.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_codon_filter.png"></p>
-<h1 id="Gap/Missing-data-filter">Gap/Missing data filter<a class="anchor-link" href="#Gap/Missing-data-filter">&#182;</a></h1><p>Turn <strong>ON</strong> the filter switch to activate the operation. Then click the <strong>Set filters</strong> button for the <em>Gap/Missing data filter</em> option and turn <strong>ON</strong> the switch on the popup as well.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_codon_filter.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial4_codon_filter.gif">
+</figure><h1 id="Gap/Missing-data-filter">Gap/Missing data filter<a class="anchor-link" href="#Gap/Missing-data-filter">&#182;</a></h1><p>Turn <strong>ON</strong> the filter switch to activate the operation. Then click the <strong>Set filters</strong> button for the <em>Gap/Missing data filter</em> option and turn <strong>ON</strong> the switch on the popup as well.</p>
 <p>The <em>Gap/Missing data filter</em> allows user to filter alignment columns (<em>within alignment</em>) and/or alignments (<em>multiple alignments</em>) based on their missing data content. Both filters can be used in combination, if both <em>within alignment</em> and <em>multiple alignments</em> checkboxes are active, or only one of them.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_missing_filter_initial.png"></p>
-<p>In this example, we will filter both aligment columns and alignment files, so both checkboxes will remain active. Within an alignment, columns can be filtered depending on the amount of gaps or missing data. Gaps refer to the usual gap symbol ("-" or "?") while missing data refers to the sum of gap symbols <strong>AND</strong> true missing data ("N" for nucleotides or "X" for proteins). These filters provide maximum threshold values in percentages, above which alignment columns are filtered. For example, if the <em>gap percentage allowed</em> option is set to 25% and the <em>missing data percentage allowed</em> option is set to 50%, then alignment columns with more than 25% of gaps OR more than 50% of gaps + true missing data are filtered.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_missing_filter_initial.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial4_missing_filter.gif">
+</figure><p>In this example, we will filter both aligment columns and alignment files, so both checkboxes will remain active. Within an alignment, columns can be filtered depending on the amount of gaps or missing data. Gaps refer to the usual gap symbol ("-" or "?") while missing data refers to the sum of gap symbols <strong>AND</strong> true missing data ("N" for nucleotides or "X" for proteins). These filters provide maximum threshold values in percentages, above which alignment columns are filtered. For example, if the <em>gap percentage allowed</em> option is set to 25% and the <em>missing data percentage allowed</em> option is set to 50%, then alignment columns with more than 25% of gaps OR more than 50% of gaps + true missing data are filtered.</p>
 <p>In our case, we are interested in producing an output matrix that contains no missing data, so we will set both sliders to 0%.</p>
 <p>Concerning the <em>multiple alignments</em> option, we will be more relaxed. We'll set the slider to 25%, which means 
 that only alignments with more than 25% of the total dataset taxa (12 out of 48 in this case) will be further process.</p>
@@ -11829,8 +11895,11 @@ that only alignments with more than 25% of the total dataset taxa (12 out of 48 
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_missing_filter_report.png"></p>
 <h1 id="Sequence-variation-filter">Sequence variation filter<a class="anchor-link" href="#Sequence-variation-filter">&#182;</a></h1><p>Turn <strong>ON</strong> the filter switch to activate the operation. Then click the <strong>Set filters</strong> button for the <em>Sequence variation filter</em> option and turn <strong>ON</strong> the switch on the popup as well.</p>
 <p>The <em>sequence variation filter</em> allows users to filter alignment files based on the amount of sequence variation. The two supported types of sequence variation are <em>variable sites</em> and <em>informative sites</em>. The different between these types is that <em>variable sites</em> includes all columns with at least one variant, while <em>informative sites</em> only includes variable columns where at least one alternative allele has two or more copies.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_variation_filter_initial.png"></p>
-<p>Here, you can specify multiple combination of maximum and minimum values for each variation type. When a checkbox is left inactive, it is assumed that there is no boundary for that specific value. For instance, lets filter our alignments so that only alignments with at least 2 informative sites are processed. To achieve this, check the <em>Minimum</em> box of the <em>informative sites</em> option and set it to 2, but leave the <em>Maximum</em> box unchecked.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_variation_filter_initial.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial4_variation_filter.gif">
+</figure><p>Here, you can specify multiple combination of maximum and minimum values for each variation type. When a checkbox is left inactive, it is assumed that there is no boundary for that specific value. For instance, lets filter our alignments so that only alignments with at least 2 informative sites are processed. To achieve this, check the <em>Minimum</em> box of the <em>informative sites</em> option and set it to 2, but leave the <em>Maximum</em> box unchecked.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_variation_filter_var2.png"></p>
 <p>If you would like to set an upper limit to the number of informative sites, just check the <em>Maximum</em> box and set a number higher than 2. In this case, let's put an upper limit of 10 informative sites.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_variation_filter_var3.png"></p>
@@ -11880,6 +11949,109 @@ that only alignments with more than 25% of the total dataset taxa (12 out of 48 
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<span class="kd">var</span> <span class="nx">getGif</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.animation&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;here&quot;</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">);</span>
+        <span class="nx">gif</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">gif</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="nx">getGif</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gif</span><span class="p">)</span>
+
+<span class="c1">//Preload all the GIF.</span>
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="p">[];</span>
+  
+<span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">gif</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>     <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">gif</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+    <span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     
+    <span class="kd">var</span> <span class="nx">$this</span>   <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+    <span class="nx">$index</span>  <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">index</span><span class="p">(),</span>
+    <span class="nx">$img</span>    <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">),</span>
+    <span class="nx">$imgSrc</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">),</span>
+    <span class="nx">$imgAlt</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">),</span>
+    <span class="nx">$imgExt</span> <span class="o">=</span> <span class="nx">$imgAlt</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+           
+    <span class="k">if</span><span class="p">(</span><span class="nx">$imgExt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;gif&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">)).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$imgSrc</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$imgAlt</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">));</span>
+    <span class="p">}</span> 
+<span class="p">});</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="9b85bbc0-4476-4543-b7d3-6da40450b529"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#9b85bbc0-4476-4543-b7d3-6da40450b529');
+var getGif = function() {
+    var gif = [];
+    $('.animation').each(function() {
+        console.log("here")
+        var data = $(this).data('alt');
+        gif.push(data);
+    });
+    return gif;
+}
+var gif = getGif();
+console.log(gif)
+
+//Preload all the GIF.
+var image = [];
+  
+$.each(gif, function(index) {
+    image[index]     = new Image();
+    image[index].src = gif[index];
+    });
+
+$('figure').on('click', function() {
+     
+    var $this   = $(this),
+    $index  = $this.index(),
+    $img    = $this.children('img'),
+    $imgSrc = $img.attr('src'),
+    $imgAlt = $img.attr('data-alt'),
+    $imgExt = $imgAlt.split('.');
+           
+    if($imgExt[1] === 'gif') {
+        $img.attr('src', $img.data('alt')).attr('data-alt', $imgSrc);
+    } else {
+        $img.attr('src', $imgAlt).attr('data-alt', $img.data('alt'));
+    } 
+});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
