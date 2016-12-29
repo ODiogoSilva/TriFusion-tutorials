@@ -11746,6 +11746,60 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<script>
+code_show=true; 
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+} 
+$( document ).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11755,48 +11809,166 @@ div#notebook {
 <p>Here, the simple conversion and concatenation of 614 protein alignment files containing a total of 48 taxa will be performed using the <em>total</em> and some custom made <em>active</em> datasets. The data set can be downloaded <a href="https://github.com/ODiogoSilva/TriFusion-tutorials/raw/master/tutorials/Datasets/Process/medium_protein_dataset/medium_protein_dataset.zip">here</a>.</p>
 <h1 id="Loading-the-data">Loading the data<a class="anchor-link" href="#Loading-the-data">&#182;</a></h1><p>As already covered in a separate tutorial (see <a href="http://nbviewer.jupyter.org/github/ODiogoSilva/TriFusion-tutorials/blob/master/tutorials/The%20three%20ways%20to%20load%20data%20into%20TriFusion.ipynb">The three ways to load data into TriFusion</a>), alignment data can be loaded into TriFusion in three different ways. Here we will use the filechooser to load an entire directory where 614 alignments files are stored.</p>
 <p>Navigate to <em>Menu</em> &gt; <em>Open/View Data</em> and click the <strong>Open file(s)</strong> button. This will open the main filechooser.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_main_filechooser_dir.png" alt="TriFusion&#39;s main filechooser"></p>
-<p>The <em>input data type</em> is already correctly set to <strong>Alignment/Sequence set</strong>, so we'll leave that as it is. Then, browse the filechooser until you find the directory containing the alignment files. In this case, all alignments are stored in a directory named "<em>Version2</em>". Since TriFusion supports the selection of directories (in which case all files inside the specified directory will be loaded), I will only select the "<em>Version2</em>" directory and click <strong>Load &amp; go back</strong> button. At the end of the data loading, a popup informs how many files were loaded.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_data_loaded.png" alt="Data loading successfull"></p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_main_filechooser_selection.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial3_load_data.gif">
+</figure><p>The <em>input data type</em> is already correctly set to <strong>Alignment/Sequence set</strong>, so we'll leave that as it is. Then, browse the filechooser until you find the directory containing the alignment files. In this case, all alignments are stored in a directory named "<em>Version2</em>". Since TriFusion supports the selection of directories (in which case all files inside the specified directory will be loaded), I will only select the "<em>Version2</em>" directory and click <strong>Load &amp; go back</strong> button. At the end of the data loading, a popup informs how many files were loaded.</p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_data_loaded.png"></p>
 <h1 id="Setting-up-conversion-options">Setting up conversion options<a class="anchor-link" href="#Setting-up-conversion-options">&#182;</a></h1><p>The conversion and concatenation options are found in the <strong>Proces</strong> screen. In this screen, select the <strong>Conversion</strong> button to reveal the general options.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_conversion.png" alt="Conversion general options"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_conversion.png"></p>
 <ul>
 <li><p>The first option, <em>Data set</em>, specifies which dataset will be used for the conversion operation. For now we'll leave it in the default value.</p>
 </li>
 <li><p>In the second option, you can choose one or more output formats to convert the input data. In this case we will choose 4 output formats (Fasta, phylip, nexus and stockholm). Some output formats also contains specific additional options that can be viewed by clicking the corresponding <strong>settings</strong> button.</p>
 </li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_output_formats.png" alt="Process output formats"></p>
-<ul>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_output_formats.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial3_select_format.gif">
+</figure><ul>
 <li>In the third option, select the directory where the output files will be generated. In the conversion operation, the output file names will be based on the corresponding input file (for instance, the input <em>alignment.fas</em> will be converted into <em>alignment.nex</em>). However, you can specify a suffix that will be appended to the end of every output file in the <strong>Suffix</strong> text box. For example, specifying "<i>_variant1</i>" as the suffix will create output files like "<i>alignment1_variant1.nex</i>". </li>
 </ul>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_output_dir.png" alt="Output directory selection for conversion"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_output_dir.png"></p>
 <p>After setting up these general options, you can click the <strong>View Queue</strong> button at the bottom of the screen to get an overview of the selected options. There you'll see that the 614 files are set to be converted into 4 output formats in a number of output formats whose name will be based on the input.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_conversion_queue.png" alt="Conversion queue"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_conversion_queue.png"></p>
 <p><a href="#Execution">Jump to execution</a>.</p>
 <h1 id="Setting-up-concatenation-options">Setting up concatenation options<a class="anchor-link" href="#Setting-up-concatenation-options">&#182;</a></h1><p>After selecting the <strong>Concatenation</strong> button, the three revealed general options are similar to the ones of the <strong>Conversion</strong> operation, with the exception that instead of specifying an output <strong>directory</strong>, you'll need to specify an output <strong>file</strong>.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation.png" alt="Concatenation general options"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation.png"></p>
 <p>We will set the same values for the <em>Data set</em> and <em>Output Format</em> options as in the <strong>Conversion</strong> operation. In the <em>Output File</em> option we will need to specify the directory AND name of the output file. Let's name our output file "<i>my_concatenation</i>".</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_save_file.png" alt="Concatenation output file"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_save_file.png"></p>
 <p>Inspection of the selection options via the <strong>View Queue</strong> button reveals that 614 files are set to be concatenated into 4 output formats, each with the name <i>my_concatenation.[ext]</i>.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_queue.png" alt="Concatenation queue"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_queue.png"></p>
 <h1 id="Execution">Execution<a class="anchor-link" href="#Execution">&#182;</a></h1><p>The execution of either <strong>Conversion</strong> or <strong>Concatenation</strong> operations is started by clicking the <strong>Execute</strong> button at the bottom of the screen. This will open an execution summary with information on the selected main operation, the selected secondary operations (if any), the selected output formats and the expected number of output files. In the case of <strong>Concatenation</strong> the actual output file name should appear.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_execution.png" alt="Process execution summary"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_execution.png"></p>
 <p>If you're happy with these settings, click the <strong>Execute</strong> button, and the <strong>Conversion</strong>/<strong>Concatenation</strong> operation will be carried out. At the end of the execution, an informative popup should appear with a notification that all files were successfully processed.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_execution_success.png" alt="Process execution success"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_execution_success.png"></p>
 <h1 id="Performing-concatenation-on-custom-active-data-set">Performing concatenation on custom active data set<a class="anchor-link" href="#Performing-concatenation-on-custom-active-data-set">&#182;</a></h1><p>In many cases, additional operations may be desired on specific subsets of the <em>total</em> loaded dataset. Here I'll demonstrate one way of performing an additional concatenation operation on a custom made data set.</p>
 <h2 id="Creating-and-changing-the-active-data-set">Creating and changing the active data set<a class="anchor-link" href="#Creating-and-changing-the-active-data-set">&#182;</a></h2><p>Suppose I was interested in concatenating the same 614 files, but only for taxa names that start with the letter "A". And after that for taxa names that start with the letter "C". Since I need to create two taxa groups (say, <i>A_taxa</i> and <i>C_taxa</i>), I will also demonstrate two methods to create these data sets.</p>
 <h3 id="Setting-&quot;A_taxa&quot;-group-using-the-sidepanel-toggling-method">Setting "A_taxa" group using the sidepanel toggling method<a class="anchor-link" href="#Setting-&quot;A_taxa&quot;-group-using-the-sidepanel-toggling-method">&#182;</a></h3><p>To create an active data set that contains only taxa whose names start with an "A", go to <em>Menu</em> &gt; <em>Open/View Data</em> and selected the <em>Taxa</em> tab. There are three taxa whose name starts with an "A". The quickest way to selected only these taxa would be to click the <strong>Deselect All</strong> button and then toggling ON the desired three taxa.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_taxa_toggle2.png" alt="Three taxa toggled ON"></p>
-<h3 id="Creating-&quot;C_taxa&quot;-group-using-the-data-set-creation-dialog">Creating "C_taxa" group using the data set creation dialog<a class="anchor-link" href="#Creating-&quot;C_taxa&quot;-group-using-the-data-set-creation-dialog">&#182;</a></h3><p>To create the <i>C_taxa</i> via the data set creation dialog, go to <em>Menu</em> &gt; <em>Dataset Groups</em>, click the <em>Taxa</em> tab, and then the <strong>Set new taxa group</strong> button. Since we're dealing with a small number of taxa, we will set the taxa group manually in TriFusion. In the taxa group creation dialog, select the taxa with names starting with a "C" (here using shift + clicking to selected the seven taxa is convenient), specify the group name and click <strong>OK</strong>.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_taxa_group.png" alt="C_taxa group definiton"></p>
-<h2 id="Execution-with-custom-active-data-sets">Execution with custom active data sets<a class="anchor-link" href="#Execution-with-custom-active-data-sets">&#182;</a></h2><p>We'll start with the execution of the <strong>Concatenation</strong> of the 614 files for the <i>A_taxa</i> taxa group. We need to make sure that the value of the <em>Data set</em> general option is set to <em>Active taxa</em>, so that TriFusion will use the three active taxa previously defined. Then, click <strong>Execute</strong> and complete the concatenation operation as before.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_taxa_toggle2.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial3_toggle_taxa.gif">
+</figure><h3 id="Creating-&quot;C_taxa&quot;-group-using-the-data-set-creation-dialog">Creating "C_taxa" group using the data set creation dialog<a class="anchor-link" href="#Creating-&quot;C_taxa&quot;-group-using-the-data-set-creation-dialog">&#182;</a></h3><p>To create the <i>C_taxa</i> via the data set creation dialog, go to <em>Menu</em> &gt; <em>Dataset Groups</em>, click the <em>Taxa</em> tab, and then the <strong>Set new taxa group</strong> button. Since we're dealing with a small number of taxa, we will set the taxa group manually in TriFusion. In the taxa group creation dialog, select the taxa with names starting with a "C" (here using shift + clicking to selected the seven taxa is convenient), specify the group name and click <strong>OK</strong>.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_taxa_group.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial3_taxa_group.gif">
+</figure><h2 id="Execution-with-custom-active-data-sets">Execution with custom active data sets<a class="anchor-link" href="#Execution-with-custom-active-data-sets">&#182;</a></h2><p>We'll start with the execution of the <strong>Concatenation</strong> of the 614 files for the <i>A_taxa</i> taxa group. We need to make sure that the value of the <em>Data set</em> general option is set to <em>Active taxa</em>, so that TriFusion will use the three active taxa previously defined. Then, click <strong>Execute</strong> and complete the concatenation operation as before.</p>
 <p>Now for the <i>C_taxa</i> group, select the name of this group in the drop down menu of the <em>Data set</em> general option.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_data_set_taxa.png" alt="Selecting the C_group in the data set general option"></p>
-<p>Once the <i>C_taxa</i> group is selected, click the <strong>Execute</strong> butto and complete the concatenation as before.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_concatenation_data_set_taxa.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial3_select_active_group.gif">
+</figure><p>Once the <i>C_taxa</i> group is selected, click the <strong>Execute</strong> butto and complete the concatenation as before.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<span class="kd">var</span> <span class="nx">getGif</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.animation&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;here&quot;</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">);</span>
+        <span class="nx">gif</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">gif</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="nx">getGif</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gif</span><span class="p">)</span>
+
+<span class="c1">//Preload all the GIF.</span>
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="p">[];</span>
+  
+<span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">gif</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>     <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">gif</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+    <span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     
+    <span class="kd">var</span> <span class="nx">$this</span>   <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+    <span class="nx">$index</span>  <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">index</span><span class="p">(),</span>
+    <span class="nx">$img</span>    <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">),</span>
+    <span class="nx">$imgSrc</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">),</span>
+    <span class="nx">$imgAlt</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">),</span>
+    <span class="nx">$imgExt</span> <span class="o">=</span> <span class="nx">$imgAlt</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+           
+    <span class="k">if</span><span class="p">(</span><span class="nx">$imgExt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;gif&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">)).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$imgSrc</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$imgAlt</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">));</span>
+    <span class="p">}</span> 
+<span class="p">});</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="e36ee62e-81a1-4eab-81b5-0af622564bb2"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#e36ee62e-81a1-4eab-81b5-0af622564bb2');
+var getGif = function() {
+    var gif = [];
+    $('.animation').each(function() {
+        console.log("here")
+        var data = $(this).data('alt');
+        gif.push(data);
+    });
+    return gif;
+}
+var gif = getGif();
+console.log(gif)
+
+//Preload all the GIF.
+var image = [];
+  
+$.each(gif, function(index) {
+    image[index]     = new Image();
+    image[index].src = gif[index];
+    });
+
+$('figure').on('click', function() {
+     
+    var $this   = $(this),
+    $index  = $this.index(),
+    $img    = $this.children('img'),
+    $imgSrc = $img.attr('src'),
+    $imgAlt = $img.attr('data-alt'),
+    $imgExt = $imgAlt.split('.');
+           
+    if($imgExt[1] === 'gif') {
+        $img.attr('src', $img.data('alt')).attr('data-alt', $imgSrc);
+    } else {
+        $img.attr('src', $imgAlt).attr('data-alt', $img.data('alt'));
+    } 
+});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
