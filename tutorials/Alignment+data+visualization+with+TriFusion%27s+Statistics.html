@@ -11746,6 +11746,60 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<script>
+code_show=true; 
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+} 
+$( document ).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11780,7 +11834,11 @@ div#notebook {
 </ul>
 <p><strong>Input data:</strong> For this tutorial, we will use a medium sized protein data set of 614 genes and 48 species.</p>
 <h1 id="Summary-statistics-overview">Summary statistics overview<a class="anchor-link" href="#Summary-statistics-overview">&#182;</a></h1><p>As soons as you load you data into TriFusion and navigate to the <strong>Statistics</strong> module, the computation of general and gene specific summary statistics will start. This computation is being done in the backgroud, so feel free to perform other tasks in TriFusion while you wait. When finished, a summary statistic overview for the currently active data set will be displayed in the <strong>Statistics</strong> screen.</p>
-<h2 id="Overall-summary-statistics">Overall summary statistics<a class="anchor-link" href="#Overall-summary-statistics">&#182;</a></h2><p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_sum_stat_general.png"></p>
+<h2 id="Overall-summary-statistics">Overall summary statistics<a class="anchor-link" href="#Overall-summary-statistics">&#182;</a></h2><figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_sum_stat_general.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/stats_tutorial1_overall_stats.gif">
+</figure><p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_sum_stat_general.png"></p>
 <p>Information is sorted in three main cateagories: _General,_Missing data and <em>Sequence variation</em>.</p>
 <p>The values in the <em>General</em> section are mostly self-explanatory. We only note that the <em>Total alignment length</em> refers to the lenght of the alignment as a whole, not the sum of each sequence in the alignment.</p>
 <p>The <em>Missing data</em> section separates the role of gaps (usually denoted by "-" in the alignment file) and true missing data (usually "N" in nucleotide sequences and "X" in protein sequences). The <em>Gaps</em> and <em>Missing data</em> values refer to the total number of gaps or missing data across all sequences, not alignment columns. Therefore,the associated percentages provide the relationship between these values and the sum of total characters in the alignment (in this case, 48 * 350 725).</p>
@@ -11791,12 +11849,18 @@ div#notebook {
 <p>As in the previous section, there are three main summary statistic categories, which are color coded along the table for convenience. A lenged of each summary statistic is provided at the top of the table.</p>
 <p>To switch to the overall summary statistics view, click the <strong>Display overall table</strong> button.</p>
 <h2 id="Displaying-summary-statistics">Displaying summary statistics<a class="anchor-link" href="#Displaying-summary-statistics">&#182;</a></h2><p>At any time, you can return to the summary statistics display by clicking the <em>Summary statistics</em> icon button at the edge of the <strong>Statistics</strong>' side panel.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_summary_button2.png"></p>
-<h1 id="Discover-and-select-data-exploration-analyses">Discover and select data exploration analyses<a class="anchor-link" href="#Discover-and-select-data-exploration-analyses">&#182;</a></h1><p>All data exploration analyses are contained within the four main category buttons that are found in <strong>Statistics'</strong> sidepanel. Clicking any of these buttons will expand all available analyses under that category. For example, clicking the <strong>Polymorphism and Variation</strong> button, will show four individual analyses.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_summary_button2.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/stats_tutorial1_select_stats.gif">
+</figure><h1 id="Discover-and-select-data-exploration-analyses">Discover and select data exploration analyses<a class="anchor-link" href="#Discover-and-select-data-exploration-analyses">&#182;</a></h1><p>All data exploration analyses are contained within the four main category buttons that are found in <strong>Statistics'</strong> sidepanel. Clicking any of these buttons will expand all available analyses under that category. For example, clicking the <strong>Polymorphism and Variation</strong> button, will show four individual analyses.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_variation_category.png"></p>
 <h2 id="How-to-view-analysis-specific-information">How to view analysis specific information<a class="anchor-link" href="#How-to-view-analysis-specific-information">&#182;</a></h2><p>A complete and detailed description of each analysis is provided in TriFusion's user guide, but you can also click the information buttons (<strong>i</strong>) that are coupled with every analysis button. For instance, clicking the information button of the <em>Pairwise sequence similarity</em> analysis shows a pop-up with a short description of the analyses, the available plot types and what the axis represent.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_pairwise_help.png"></p>
-<h2 id="The-available-plot-types-per-analysis-and-how-to-select-them">The available plot types per analysis and how to select them<a class="anchor-link" href="#The-available-plot-types-per-analysis-and-how-to-select-them">&#182;</a></h2><p>In the majority of the individual analysis, there are up to three plot types available that represent different perspectives of the same analsyis:</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_pairwise_help.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/stats_tutorial1_info.gif">
+</figure><h2 id="The-available-plot-types-per-analysis-and-how-to-select-them">The available plot types per analysis and how to select them<a class="anchor-link" href="#The-available-plot-types-per-analysis-and-how-to-select-them">&#182;</a></h2><p>In the majority of the individual analysis, there are up to three plot types available that represent different perspectives of the same analsyis:</p>
 <ul>
 <li>Single gene: You choose a single a gene from the data set and the analysis is performed on that gene (usually a sliding window plot).</li>
 <li>Per species: The analyses will be focused on gathering information for each taxa or discriminates it by taxa in some way.</li>
@@ -11813,16 +11877,22 @@ div#notebook {
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_seq_sim_sp.png"></p>
 <h2 id="Taking-advantage-of-fast-plot-switching">Taking advantage of fast plot switching<a class="anchor-link" href="#Taking-advantage-of-fast-plot-switching">&#182;</a></h2><p>While the active data set remains the same, all generate plots are stored locally. This means that if you need to visualize an analyses that you already performed in your current session, you do not have to repeat the entire computation. For instance, we are currently visualizing the <em>Per species</em> plot type of the <em>Pairwise sequence similarity</em> analysis. If you click the <strong>Average</strong> button in the floating box to change the plot type, you'll notice that the switch will be almost instantaneous.</p>
 <h2 id="The-Single-Gene-analysis">The Single Gene analysis<a class="anchor-link" href="#The-Single-Gene-analysis">&#182;</a></h2><p>Some analyses can be performed for single genes in the form of a sliding window analysis that contain additional features. Let's investigate the averaged pairwise sequence similarity for a single gene in our data set. Click the <em>Pairwise sequence similarity</em> analysis and then the <em>Single gene</em> plot type.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_single_gene.png"></p>
-<p>In this dialog, you can choose the sliding window range and the target gene. We'll leave the default sliding window value of 10 and choose the first gene in the list.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_single_gene.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/stats_tutorial1_single_gene.gif">
+</figure><p>In this dialog, you can choose the sliding window range and the target gene. We'll leave the default sliding window value of 10 and choose the first gene in the list.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_single_gebe.png"></p>
 <p>In the footer of the screen, you can set an horizontal line to evaluate regions above or below a given threshold.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_single_gene_threshold.png"></p>
 <p>If you want to change to another gene, you can do as in a normal plot type switch. The floating box on the top right of the screen should have the option to <em>Change gene</em>, where you can select a new gene and/or a new sliding window range.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_single_gene_threshold.png"></p>
 <h1 id="How-to-change/update-the-active-data-set">How to change/update the active data set<a class="anchor-link" href="#How-to-change/update-the-active-data-set">&#182;</a></h1><p>The analyses in the <strong>Statistics</strong> module are not limited to the total data set loaded into TriFusion. You can modify the active file/taxa data sets or create data set groups in TriFusion (see tutorial <a href="http://nbviewer.jupyter.org/github/ODiogoSilva/TriFusion-tutorials/blob/master/tutorials/Creating%20and%20using%20active%20data%20set%20groups..ipynb">Creating and using active data set groups</a>), and then select them in the bottom of the <strong>Statistics</strong> sidepanel.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_active_dataset.png"></p>
-<p>Following the guidelines in the <a href="http://nbviewer.jupyter.org/github/ODiogoSilva/TriFusion-tutorials/blob/master/tutorials/Creating%20and%20using%20active%20data%20set%20groups..ipynb">Creating and using active data set groups</a> tutorial, we created a taxa group of 12 elements that contains taxa whose name starts with an "A", "B" or "C", named <i>A_to_C</i>.
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_active_dataset.png" alt="Static Image" data-alt="https://github.com/ODiogoSilva/TriFusion-tutorials/raw/master/tutorials/gifs/stats_tutorial1_change_active.gif">
+</figure><p>Following the guidelines in the <a href="http://nbviewer.jupyter.org/github/ODiogoSilva/TriFusion-tutorials/blob/master/tutorials/Creating%20and%20using%20active%20data%20set%20groups..ipynb">Creating and using active data set groups</a> tutorial, we created a taxa group of 12 elements that contains taxa whose name starts with an "A", "B" or "C", named <i>A_to_C</i>.
 To change the taxa data set to the newly define group, click in the dropdown menu for the taxa data set and select the <i>A_to_C</i> option.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_selecting_taxa_group.png"></p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_taxa_selected.png"></p>
@@ -11831,16 +11901,25 @@ To change the taxa data set to the newly define group, click in the dropdown men
 <h1 id="How-to-export-figures-and-tables">How to export figures and tables<a class="anchor-link" href="#How-to-export-figures-and-tables">&#182;</a></h1><p>All plots generated in TriFusion can be exported as a graphics file and almost all can be exported in table format. These functions are available in the plot screen bar at the right of the screen.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_export_bar.png"></p>
 <h2 id="Export-a-figure">Export a figure<a class="anchor-link" href="#Export-a-figure">&#182;</a></h2><p>Click the <strong>Export as graphics</strong> button in the plot screen right bar. This will open a filechooser where you can choose where to export the figure, its name and graphics format.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_export_figure.png"></p>
-<p>Here we provided some name to our figure, and set the image format to <em>svg</em>. If you wish to convert the plot into grayscale, you can do so by checking the <em>Grayscale</em> box. Finally, click <strong>Save</strong> and the figure will be exported.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_export_figure.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/stats_tutorial1_export_graphic.gif">
+</figure><p>Here we provided some name to our figure, and set the image format to <em>svg</em>. If you wish to convert the plot into grayscale, you can do so by checking the <em>Grayscale</em> box. Finally, click <strong>Save</strong> and the figure will be exported.</p>
 <h2 id="Export-a-table">Export a table<a class="anchor-link" href="#Export-a-table">&#182;</a></h2><p>Click the <strong>Export as table</strong> button in the plot screen right bar. As in the previous section, this will open a filechooser where you can chooser where to export the table and its name.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_export_table.png"></p>
-<p>Then click <strong>Save</strong> to export the table. The generated table will be in <em>csv</em> format, which can be readily imported by LibreOffice or MS Excel or viewed as a plain text file.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_export_table.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/stats_tutorial1_export_table.gif">
+</figure><p>Then click <strong>Save</strong> to export the table. The generated table will be in <em>csv</em> format, which can be readily imported by LibreOffice or MS Excel or viewed as a plain text file.</p>
 <h1 id="Dealing-with-outliers">Dealing with outliers<a class="anchor-link" href="#Dealing-with-outliers">&#182;</a></h1><p>Outlier analyses in TriFusion are a bit different because they offer you the option to remove files and/or taxa that may have an outlier behaviour for some statistics. If you click on the <em>Outlier Dectection</em> category in <strong>Statistic's</strong> sidepanel you'll see three outlier detection analyses: by <em>missing data</em>, <em>segregating sites</em> and <em>sequence size</em>.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_outlier_analyses.png"></p>
 <p>Let's exemplify outlier handling by checking for outlier taxa for missing data, that is, taxa that contain unusual amounts of missing data. Click on the <strong>Missing data outliers</strong> button, and then the <strong>Per species</strong> plot type.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_taxa_missing_outlier.png"></p>
-<p>You can see that the missing data distribution is bimodal (two peaks) and that one taxa outlier was found (see the footer of the screen). In the footer of the screen are three functions to handle potential outliers:</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_taxa_missing_outlier.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/stats_tutorial1_outliers.gif">
+</figure><p>You can see that the missing data distribution is bimodal (two peaks) and that one taxa outlier was found (see the footer of the screen). In the footer of the screen are three functions to handle potential outliers:</p>
 <ul>
 <li>Remove: Clicking the <strong>Remove</strong> button will remove the outlier taxa from the current TriFusion session. This is equivalent to manually remove the taxa in TriFusion's sidepanel.</li>
 <li>Export: Clicking the <strong>Export</strong> button will save the outlier taxa to a <em>csv</em> file, where each line will contain a taxon name. This can be used to change the active data set in TriFusion using a text file (see this section of the <a href="http://nbviewer.jupyter.org/github/ODiogoSilva/TriFusion-tutorials/blob/master/tutorials/Creating%20and%20using%20active%20data%20set%20groups..ipynb#Import-selection-from-file">Creating and using active data set groups</a> tutorial). </li>
@@ -11849,6 +11928,109 @@ To change the taxa data set to the newly define group, click in the dropdown men
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<span class="kd">var</span> <span class="nx">getGif</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.animation&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;here&quot;</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">);</span>
+        <span class="nx">gif</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">gif</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="nx">getGif</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gif</span><span class="p">)</span>
+
+<span class="c1">//Preload all the GIF.</span>
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="p">[];</span>
+  
+<span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">gif</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>     <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">gif</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+    <span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     
+    <span class="kd">var</span> <span class="nx">$this</span>   <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+    <span class="nx">$index</span>  <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">index</span><span class="p">(),</span>
+    <span class="nx">$img</span>    <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">),</span>
+    <span class="nx">$imgSrc</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">),</span>
+    <span class="nx">$imgAlt</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">),</span>
+    <span class="nx">$imgExt</span> <span class="o">=</span> <span class="nx">$imgAlt</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+           
+    <span class="k">if</span><span class="p">(</span><span class="nx">$imgExt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;gif&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">)).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$imgSrc</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$imgAlt</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">));</span>
+    <span class="p">}</span> 
+<span class="p">});</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="39e1b94c-4bf9-45c3-8efa-a8a5c687d6a8"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#39e1b94c-4bf9-45c3-8efa-a8a5c687d6a8');
+var getGif = function() {
+    var gif = [];
+    $('.animation').each(function() {
+        console.log("here")
+        var data = $(this).data('alt');
+        gif.push(data);
+    });
+    return gif;
+}
+var gif = getGif();
+console.log(gif)
+
+//Preload all the GIF.
+var image = [];
+  
+$.each(gif, function(index) {
+    image[index]     = new Image();
+    image[index].src = gif[index];
+    });
+
+$('figure').on('click', function() {
+     
+    var $this   = $(this),
+    $index  = $this.index(),
+    $img    = $this.children('img'),
+    $imgSrc = $img.attr('src'),
+    $imgAlt = $img.attr('data-alt'),
+    $imgExt = $imgAlt.split('.');
+           
+    if($imgExt[1] === 'gif') {
+        $img.attr('src', $img.data('alt')).attr('data-alt', $imgSrc);
+    } else {
+        $img.attr('src', $imgAlt).attr('data-alt', $img.data('alt'));
+    } 
+});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
