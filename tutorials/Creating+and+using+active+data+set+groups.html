@@ -11746,6 +11746,60 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<script>
+code_show=true; 
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+} 
+$( document ).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11777,13 +11831,16 @@ div#notebook {
 <h1 id="Input-data">Input data<a class="anchor-link" href="#Input-data">&#182;</a></h1><p>For this tutorial, we will use a medium sized data set of 614 genes and 48 taxa (which can be donwloaded <a href="https://github.com/ODiogoSilva/TriFusion-tutorials/raw/master/tutorials/Datasets/Process/medium_protein_dataset/medium_protein_dataset.zip">here</a>).</p>
 <h1 id="How-to-use-active-data-sets">How to use active data sets<a class="anchor-link" href="#How-to-use-active-data-sets">&#182;</a></h1><p><em>Active</em> data sets are selected by default. You can change to the <em>total</em> dataset or to any user made dataset by clicking the correct group in the corresponding dropdown menu.</p>
 <p>Dropdown menu for data set selection on the <strong>Process</strong> screen:</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_data_set_selection.png" alt="Data set selection on Process screen"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_data_set_selection.png"></p>
 <p>Dropdown menu for data set selection on the <strong>Statisics</strong> screen:</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/statistics_data_set_selection.png" alt="Data set selection on Statistics screen"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/statistics_data_set_selection.png"></p>
 <h1 id="Toggle-file/taxa-buttons-in-the-side-panel">Toggle file/taxa buttons in the side panel<a class="anchor-link" href="#Toggle-file/taxa-buttons-in-the-side-panel">&#182;</a></h1><h2 id="Mouse-click-toggling">Mouse click toggling<a class="anchor-link" href="#Mouse-click-toggling">&#182;</a></h2><p>By default, when data is loaded into TriFusion all files/taxa are active. Therefore, the <em>total</em> and <em>active</em> datasets are the same. The quickest way to modify the <em>active</em> dataset is by navigating to <em>Menu</em> &gt; <em>Open/View Data</em> and toggle the corresponding file/taxa buttons. Shift + clicking is also supported to select multiple contiguous files/taxa.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_toggle.png" alt="Dataset toggle modification"></p>
-<p>Active files/taxa will appear with a blue background, while inactive buttons will have no background. A label below the button list displays how many files/taxa are currently active.</p>
-<h2 id="Import-selection-from-file">Import selection from file<a class="anchor-link" href="#Import-selection-from-file">&#182;</a></h2><p>When dealing with a large number of files/taxa it may be more convenient to provide the <em>active</em> dataset through a text file. This should be a single text file containing the names of the desired files/taxa in each line (the extension of the file is not important). You can create it yourself, or donwload it [here].(<a href="https://github.com/ODiogoSilva/TriFusion-tutorials/raw/master/tutorials/Datasets/Process/medium_protein_dataset/taxa_list.txt">https://github.com/ODiogoSilva/TriFusion-tutorials/raw/master/tutorials/Datasets/Process/medium_protein_dataset/taxa_list.txt</a>)</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_toggle.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial2_mouse_toggle.gif">
+</figure><p>Active files/taxa will appear with a blue background, while inactive buttons will have no background. A label below the button list displays how many files/taxa are currently active.</p>
+<h2 id="Import-selection-from-file">Import selection from file<a class="anchor-link" href="#Import-selection-from-file">&#182;</a></h2><p>When dealing with a large number of files/taxa it may be more convenient to provide the <em>active</em> dataset through a text file. This should be a single text file containing the names of the desired files/taxa in each line (the extension of the file is not important). You can create it yourself, or donwload it <a href="https://github.com/ODiogoSilva/TriFusion-tutorials/raw/master/tutorials/Datasets/Process/medium_protein_dataset/taxa_list.txt">here</a>.</p>
 
 </div>
 </div>
@@ -11810,19 +11867,25 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Providing this file to TriFusion will select these three taxa for the <em>active</em> dataset. The file can be provided by clicking the "<strong>+</strong>" button at the bottom of the panel, and then "<strong>Select taxa names from .txt</strong>".</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_toggle_fromfile.png" alt="Toggle files/taxa from text file"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_toggle_fromfile.png"></p>
 <p>After loading the file, <strong>ONLY</strong> the specified taxa will become active, regardless of the previous <em>active</em> dataset. Names that do not match any of the files/taxa present in TriFusion will be ignored.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_selected_after_file.png" alt="Taxa selection after file import"></p>
-<p>If you wish to save the active dataset to a new file so that you can use it later, click the "<strong>+</strong>" button and then "<strong>Export selected taxa names to .txt</strong>".</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_selected_after_file.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial2_select_from_file.gif">
+</figure><p>If you wish to save the active dataset to a new file so that you can use it later, click the "<strong>+</strong>" button and then "<strong>Export selected taxa names to .txt</strong>".</p>
 <h1 id="Create-dataset-groups">Create dataset groups<a class="anchor-link" href="#Create-dataset-groups">&#182;</a></h1><p>When the workflow requires the application of operations to multiple taxa/files datasets, it is more convenient to define all dataset groups and then use the dropdown menus to select the desired <em>active</em> data set. Dataset groups can be defined in TriFusion by navigating to <em>Menu</em> &gt; <em>Dataset Groups</em>.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_creationpanel.png" alt="Dataset creation panel"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_creationpanel.png"></p>
 <p>File and taxon groups are sorted into two tabs, like in the <em>Open/View Data</em> panel, and clicking the <strong>Set new [file|taxa] group</strong> button will start the creation of the corresponding group.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_triage.png" alt="Dataset group creation triage"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_triage.png"></p>
 <p>Here you can choose to create the dataset group either manually in TriFusion, or by providing the names of the files/taxa in a text file.</p>
 <h2 id="Manual-group-creation-inside-TriFusion">Manual group creation inside TriFusion<a class="anchor-link" href="#Manual-group-creation-inside-TriFusion">&#182;</a></h2><p><strong>WARNING:</strong> This option is discourage for very large data sets (~200 itens). In these cases, use the <a href="#Group-creation-from-file">group creation from file</a> option.</p>
 <p>Let's create a new taxa group, by clicking the <em>Taxa</em> tab and then the <strong>Set new taxa group</strong> button. Here, groups can be created by selecting the desired files/taxa from the <em>All [files|taxa]</em> column and using the arrow buttons to move them to the <em>Selected taxa</em> column. Once the group is complete, give it a unique name and the group is ready to be defined. If you wish to create multiple groups in one sitting, click the <strong>Apply</strong> button to create the group but remain in the dialog for further group definition.</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_manual_creation.png" alt="Manual group creation dialog"></p>
-<p>Previously created groups will be listed under the <em>Created groups</em> column, where they can be selected (this will move the group members to the <em>Selected taxa</em> column) or removed.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_manual_creation.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial2_manual_selection.gif">
+</figure><p>Previously created groups will be listed under the <em>Created groups</em> column, where they can be selected (this will move the group members to the <em>Selected taxa</em> column) or removed.</p>
 <h2 id="Group-creation-from-file">Group creation from file<a class="anchor-link" href="#Group-creation-from-file">&#182;</a></h2><p>Here, you will only have to provide a text file with the names of the files/taxa you wish to select for the current group. The text file is the same as described in the <a href="#Import-selection-from-file">import selection from file</a> section.</p>
 
 </div>
@@ -11850,11 +11913,117 @@ div#notebook {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After providing the file with the group members list, specify a unique name for the new data set group, and that's it!</p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_file_creation.png" alt="Dataset creation from file"></p>
-<p><img src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_name_specification.png" alt="Dataset creation from file name specification"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_file_creation.png"></p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/dataset_name_specification.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial2_file_selection.gif">
+</figure>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<span class="kd">var</span> <span class="nx">getGif</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.animation&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;here&quot;</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">);</span>
+        <span class="nx">gif</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">gif</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="nx">getGif</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gif</span><span class="p">)</span>
+
+<span class="c1">//Preload all the GIF.</span>
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="p">[];</span>
+  
+<span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">gif</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>     <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">gif</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+    <span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     
+    <span class="kd">var</span> <span class="nx">$this</span>   <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+    <span class="nx">$index</span>  <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">index</span><span class="p">(),</span>
+    <span class="nx">$img</span>    <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">),</span>
+    <span class="nx">$imgSrc</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">),</span>
+    <span class="nx">$imgAlt</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">),</span>
+    <span class="nx">$imgExt</span> <span class="o">=</span> <span class="nx">$imgAlt</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+           
+    <span class="k">if</span><span class="p">(</span><span class="nx">$imgExt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;gif&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">)).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$imgSrc</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$imgAlt</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">));</span>
+    <span class="p">}</span> 
+<span class="p">});</span>
+</pre></div>
 
 </div>
 </div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="d7c5ca72-58f1-462b-9301-4796db3a9026"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#d7c5ca72-58f1-462b-9301-4796db3a9026');
+var getGif = function() {
+    var gif = [];
+    $('.animation').each(function() {
+        console.log("here")
+        var data = $(this).data('alt');
+        gif.push(data);
+    });
+    return gif;
+}
+var gif = getGif();
+console.log(gif)
+
+//Preload all the GIF.
+var image = [];
+  
+$.each(gif, function(index) {
+    image[index]     = new Image();
+    image[index].src = gif[index];
+    });
+
+$('figure').on('click', function() {
+     
+    var $this   = $(this),
+    $index  = $this.index(),
+    $img    = $this.children('img'),
+    $imgSrc = $img.attr('src'),
+    $imgAlt = $img.attr('data-alt'),
+    $imgExt = $imgAlt.split('.');
+           
+    if($imgExt[1] === 'gif') {
+        $img.attr('src', $img.data('alt')).attr('data-alt', $imgSrc);
+    } else {
+        $img.attr('src', $imgAlt).attr('data-alt', $img.data('alt'));
+    } 
+});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
