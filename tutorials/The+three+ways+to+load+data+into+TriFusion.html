@@ -11746,6 +11746,60 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1"> if (code_show){</span>
+<span class="s1"> $(&#39;div.input&#39;).hide();</span>
+<span class="s1"> } else {</span>
+<span class="s1"> $(&#39;div.input&#39;).show();</span>
+<span class="s1"> }</span>
+<span class="s1"> code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<script>
+code_show=true; 
+function code_toggle() {
+ if (code_show){
+ $('div.input').hide();
+ } else {
+ $('div.input').show();
+ }
+ code_show = !code_show
+} 
+$( document ).ready(code_toggle);
+</script>
+<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -11770,14 +11824,21 @@ div#notebook {
 </ul>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_main_filechooser.png"></p>
 <p>Navigate through the filechooser by double clicking directory or clicking on the "<strong>&gt;</strong>" symbol until you find the desired directory. Multiple files can be selected by pressing either the <em>Control</em> or <em>Shift</em> keys. After completing you selection, click the <strong>Load &amp; go back</strong> button to load the data and go back to the previous screen. If you wish to load additional data, click the <strong>Load selection</strong> button, which will load the data but remain in the filechooser screen. In the example below, 7 files have been selected and are ready to be loaded.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_main_filechooser_selection.png"></p>
-<p><strong>NOTE:</strong> TriFusion also supports the selection of one or more directories instead of files. When directories are selected, all files contained in those directories will be loaded into TriFusion. If you are worried that not all files in a directory are alignments/proteomes, do not worry. TriFusion will successfully load alignments/proteomes and ignore non compliant files. However, make sure that all files are of the same type. Mixing nucleotide and protein files is currently not supported and will issue an error without loading any files.</p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_main_filechooser_selection.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial1_filechooser.gif">
+</figure><p><strong>NOTE:</strong> TriFusion also supports the selection of one or more directories instead of files. When directories are selected, all files contained in those directories will be loaded into TriFusion. If you are worried that not all files in a directory are alignments/proteomes, do not worry. TriFusion will successfully load alignments/proteomes and ignore non compliant files. However, make sure that all files are of the same type. Mixing nucleotide and protein files is currently not supported and will issue an error without loading any files.</p>
 <h1 id="Drag-and-Drop">Drag and Drop<a class="anchor-link" href="#Drag-and-Drop">&#182;</a></h1><p>Data files can be provided to TriFusion's window directly from your File Manager. Here, navigate in you operating system's file manager a select the desired data files.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_dragndrop_filemanager.png"></p>
 <p>After selecting the files drag them into TriFusion's window. This will display informing the 7 files will be loaded into TriFusion and asking whether the files represent alignment or proteome files. In this case, the data files correspond to alignments.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_dropped.png"></p>
 <p>After clicking the <strong>Alignment</strong> button, the selected files will be loaded normally into TriFusion.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_dragndrop_success.png"></p>
+<figure>
+    <br>
+    <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_dragndrop_success.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/process_tutorial1_dragNdrop.gif">
+</figure><p><img width="90%" src=""></p>
 <h1 id="Via-terminal">Via terminal<a class="anchor-link" href="#Via-terminal">&#182;</a></h1><p>For terminal lovers (&lt;3) files can be loaded automatically when execution the TriFusion application. In a general way, if the TriFusion executable is in your $PATH environmental variable, you can write it in the terminal and then provide  any number of files.</p>
 
 </div>
@@ -11809,6 +11870,109 @@ div#notebook {
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="nx">javascript</span>
+<span class="kd">var</span> <span class="nx">getGif</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.animation&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;here&quot;</span><span class="p">)</span>
+        <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">);</span>
+        <span class="nx">gif</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">gif</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">gif</span> <span class="o">=</span> <span class="nx">getGif</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gif</span><span class="p">)</span>
+
+<span class="c1">//Preload all the GIF.</span>
+<span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="p">[];</span>
+  
+<span class="nx">$</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="nx">gif</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">index</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">]</span>     <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+    <span class="nx">image</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">gif</span><span class="p">[</span><span class="nx">index</span><span class="p">];</span>
+    <span class="p">});</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;figure&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     
+    <span class="kd">var</span> <span class="nx">$this</span>   <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">),</span>
+    <span class="nx">$index</span>  <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">index</span><span class="p">(),</span>
+    <span class="nx">$img</span>    <span class="o">=</span> <span class="nx">$this</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">),</span>
+    <span class="nx">$imgSrc</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">),</span>
+    <span class="nx">$imgAlt</span> <span class="o">=</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">),</span>
+    <span class="nx">$imgExt</span> <span class="o">=</span> <span class="nx">$imgAlt</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+           
+    <span class="k">if</span><span class="p">(</span><span class="nx">$imgExt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;gif&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">)).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$imgSrc</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">$img</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="nx">$imgAlt</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;data-alt&#39;</span><span class="p">,</span> <span class="nx">$img</span><span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="s1">&#39;alt&#39;</span><span class="p">));</span>
+    <span class="p">}</span> 
+<span class="p">});</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+
+
+
+<div id="c129521f-eabe-4bea-a1c6-574dce9f8457"></div>
+<div class="output_subarea output_javascript ">
+<script type="text/javascript">
+var element = $('#c129521f-eabe-4bea-a1c6-574dce9f8457');
+var getGif = function() {
+    var gif = [];
+    $('.animation').each(function() {
+        console.log("here")
+        var data = $(this).data('alt');
+        gif.push(data);
+    });
+    return gif;
+}
+var gif = getGif();
+console.log(gif)
+
+//Preload all the GIF.
+var image = [];
+  
+$.each(gif, function(index) {
+    image[index]     = new Image();
+    image[index].src = gif[index];
+    });
+
+$('figure').on('click', function() {
+     
+    var $this   = $(this),
+    $index  = $this.index(),
+    $img    = $this.children('img'),
+    $imgSrc = $img.attr('src'),
+    $imgAlt = $img.attr('data-alt'),
+    $imgExt = $imgAlt.split('.');
+           
+    if($imgExt[1] === 'gif') {
+        $img.attr('src', $img.data('alt')).attr('data-alt', $imgSrc);
+    } else {
+        $img.attr('src', $imgAlt).attr('data-alt', $img.data('alt'));
+    } 
+});
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
     </div>
   </div>
