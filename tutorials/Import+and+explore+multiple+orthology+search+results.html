@@ -11,8 +11,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,7 +1107,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2536,7 +2535,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3027,7 +3025,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8758,6 +8755,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,8 +8960,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8984,6 +8990,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9120,6 +9136,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9209,6 +9228,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9253,6 +9275,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9549,6 +9574,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9569,11 +9595,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11244,7 +11265,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11556,6 +11577,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11569,6 +11591,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11778,7 +11803,9 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[1]:</div>
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <script>
@@ -11828,9 +11855,9 @@ $( document ).ready(code_toggle);
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>My_group1000: Aurde|1093705    Aurde|1159865    Aurde|1196783    Aurde|76841    Phbla|138389 (...)</p>
-<p>My_group1001: Phbla|138268    Phbla|139062    Phbla|145188    Phbla|145348    Phbla|145707 (...)</p>
-<p>My_group1002: Phbla|160931    Phbla|137818    Phbla|137820    Phbla|137828    Phbla|142143 (...)</p>
+<p>My_group1000: Aurde|1093705 Aurde|1159865   Aurde|1196783   Aurde|76841 Phbla|138389 (...)</p>
+<p>My_group1001: Phbla|138268  Phbla|139062    Phbla|145188    Phbla|145348    Phbla|145707 (...)</p>
+<p>My_group1002: Phbla|160931  Phbla|137818    Phbla|137820    Phbla|137828    Phbla|142143 (...)</p>
 
 </div>
 </div>
@@ -11870,7 +11897,7 @@ $( document ).ready(code_toggle);
     <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_compare.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/orto_tutorial3_compare_groups.gif">
 </figure><p>This will bring you to a plotting screen, where a bar plot will be displayed with the number of total and filtered ortholog groups for each group file. You can interact with the plot by pressing the left mouse buttn and dragging the plot. You can also zoom in and out using <em>Ctrl + mouse wheel</em> or by clicking the corresponding buttons on the right side panel.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_compare_plot.png"></p>
-<p>At the top of the screen, you can see the currently active filters, which are the same we set in the previous section. You can change the filter values using the sliders. Let's try to relaxed even further the minimum number of taxa to 2. After changing the slider value, you can see that the refresh button turned red, which means that you have set different filter. To update the plot, click the refresh button.</p>
+<p>At the top of the screen, you can see the currently active filters, which are the same we set in the previous section. You can change the filter values using the sliders. Let's try to relaxed even further the minimum number of taxa to 2. After changing the slider value (or changing the "Value" number), you can see that the refresh button turned red, which means that you have set different filter. To update the plot, click the refresh button.</p>
 <figure>
     <br>
     <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
@@ -11880,7 +11907,7 @@ $( document ).ready(code_toggle);
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_compare_change_display.png"></p>
 <p>At any time, you can export the current plot in figure or table format by clicking the <strong>Export as graphics</strong> or <strong>Export as table</strong> buttons, respectively, in the right side panel. You can also export the ortholog groups into another group file, protein or nucleotide sequences by clicking the <strong>Export group</strong> button (See tutorial <a href="http://nbviewer.jupyter.org/github/ODiogoSilva/TriFusion-tutorials/blob/master/tutorials/Export%20ortholog%20groups%20into%20protein%20and%20nucleotide%20sequence%20files.ipynb">Export ortholog groups into protein and nucleotide sequence files</a>).</p>
 <h1 id="Further-investigate-individual-group-files">Further investigate individual group files<a class="anchor-link" href="#Further-investigate-individual-group-files">&#182;</a></h1><p>Individual group files can also be further visually explored using the ploting tools under the <em>Graphical visualization</em> section in the bottom left of the screen. Graphical visualization options are sorted into <em>Species focused exploration</em> and <em>Ortholog focused exploration</em>. Clicking on either option will present a drop down menu where specific ploting options are available. When one of these options is selected, a short description is shown below. Let's investigate the taxa coverage of the currently active group file, by selecting the <em>Species focused exploration</em> and the <em>Taxa coverage</em> plot option. Then, click on the <strong>Generate plot</strong> button.</p>
-<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_graphical_visualization.png"></p>
+<p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_after_filter.png"></p>
 <p>This will open a plot screen akin to the one displayed when comparing different group files. In this specific plot you can see, for each taxa, the proportion of ortholog groups where they are present (dark blue) or missing (light blue). In the top right of the screen, under the <em>Summary</em> section, you can see the total (red) and filtered (green) number of ortholog groups and taxa that are being used to generated the plot. In this case, a total of 21 777 ortholog groups across 10 taxa are being used. As you can see, by default, all ploting options will set the filters to their most relaxed values (allowing for all gene copy numbers and any taxa representation).</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_taxa_coverage.png"></p>
 <p>The plot can be interacted with by clicking and dragging and by zooming in and out. In the header of the screen, the ortholog filters can be changed. Let's change the filter setting so that only single copy genes with at least 5 taxa represented are considered.  When the filters are modified, the refresh button should turn red and must be clicked in order to update the plot.</p>
@@ -11899,7 +11926,7 @@ $( document ).ready(code_toggle);
 <figure>
     <br>
     <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
-    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_full_report.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/orto_tutorial3_full_report.gif">
+    <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/orto_explore_after_filter.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/orto_tutorial3_full_report.gif">
 </figure><p>Then select the directory where the report will be generated. In that directory, an HTML file will be created where all plots will be visualized for the currently set ortholog filters.</p>
 
 </div>
@@ -11956,14 +11983,16 @@ $( document ).ready(code_toggle);
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 
 
 
-<div id="f3920a41-b013-4b7f-8cbb-66043f09dc24"></div>
+
+<div id="28712a4f-acc3-4178-9501-ab55b9861e69"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#f3920a41-b013-4b7f-8cbb-66043f09dc24');
+var element = $('#28712a4f-acc3-4178-9501-ab55b9861e69');
 var getGif = function() {
     var gif = [];
     $('.animation').each(function() {
