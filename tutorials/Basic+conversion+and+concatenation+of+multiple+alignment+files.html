@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Basic conversion and concatenation of multiple alignment files</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Basic conversion and concatenation of multiple alignment files</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -13,8 +11,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1109,7 +1107,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2538,7 +2535,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3029,7 +3025,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8760,6 +8755,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8962,8 +8960,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8986,6 +8990,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9122,6 +9136,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9211,6 +9228,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9255,6 +9275,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9551,6 +9574,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9571,11 +9595,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11246,7 +11265,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11558,6 +11577,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11571,6 +11591,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11631,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11643,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11776,7 +11803,9 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[2]:</div>
+<div class="output_area">
+<div class="prompt output_prompt">Out[2]:</div>
+
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <script>
@@ -11846,7 +11875,7 @@ $( document ).ready(code_toggle);
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/process_execution_success.png"></p>
 <h1 id="Performing-concatenation-on-custom-active-data-set">Performing concatenation on custom active data set<a class="anchor-link" href="#Performing-concatenation-on-custom-active-data-set">&#182;</a></h1><p>In many cases, additional operations may be desired on specific subsets of the <em>total</em> loaded dataset. Here I'll demonstrate one way of performing an additional concatenation operation on a custom made data set.</p>
 <h2 id="Creating-and-changing-the-active-data-set">Creating and changing the active data set<a class="anchor-link" href="#Creating-and-changing-the-active-data-set">&#182;</a></h2><p>Suppose I was interested in concatenating the same 614 files, but only for taxa names that start with the letter "A". And after that for taxa names that start with the letter "C". Since I need to create two taxa groups (say, <i>A_taxa</i> and <i>C_taxa</i>), I will also demonstrate two methods to create these data sets.</p>
-<h3 id="Setting-&quot;A_taxa&quot;-group-using-the-sidepanel-toggling-method">Setting "A_taxa" group using the sidepanel toggling method<a class="anchor-link" href="#Setting-&quot;A_taxa&quot;-group-using-the-sidepanel-toggling-method">&#182;</a></h3><p>To create an active data set that contains only taxa whose names start with an "A", go to <em>Menu</em> &gt; <em>Open/View Data</em> and selected the <em>Taxa</em> tab. There are three taxa whose name starts with an "A". The quickest way to selected only these taxa would be to click the <strong>Deselect All</strong> button and then toggling ON the desired three taxa.</p>
+<h3 id="Setting-a-taxa-group-using-the-sidepanel-toggling-method">Setting a taxa group using the sidepanel toggling method<a class="anchor-link" href="#Setting-a-taxa-group-using-the-sidepanel-toggling-method">&#182;</a></h3><p>To create an active data set that contains, for example, only taxa whose names start with an "A", go to <em>Menu</em> &gt; <em>Open/View Data</em> and selected the <em>Taxa</em> tab. There are three taxa whose name starts with an "A". The quickest way to selected only these taxa would be to click the <strong>Deselect All</strong> button and then toggling ON the desired three taxa.</p>
 <figure>
     <br>
     <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
@@ -11918,14 +11947,16 @@ $( document ).ready(code_toggle);
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 
 
 
-<div id="e36ee62e-81a1-4eab-81b5-0af622564bb2"></div>
+
+<div id="6741c2ee-1a41-449f-a4f4-b57b28cb9e11"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#e36ee62e-81a1-4eab-81b5-0af622564bb2');
+var element = $('#6741c2ee-1a41-449f-a4f4-b57b28cb9e11');
 var getGif = function() {
     var gif = [];
     $('.animation').each(function() {
@@ -11973,4 +12004,8 @@ $('figure').on('click', function() {
     </div>
   </div>
 </body>
+
+ 
+
+
 </html>
