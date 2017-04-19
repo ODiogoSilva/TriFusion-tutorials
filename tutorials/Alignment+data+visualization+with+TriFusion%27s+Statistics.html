@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Alignment data visualization with TriFusion's Statistics</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Alignment data visualization with TriFusion's Statistics</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -13,8 +11,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.6 (http://getbootstrap.com)
- * Copyright 2011-2015 Twitter, Inc.
+ * Bootstrap v3.3.7 (http://getbootstrap.com)
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1109,7 +1107,6 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2538,7 +2535,6 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3029,7 +3025,6 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
-  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8760,6 +8755,9 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
+[dir="rtl"] #ipython_notebook {
+  float: right !important;
+}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8962,8 +8960,14 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
+[dir="rtl"] #tabs li {
+  float: right;
+}
 ul#tabs {
   margin-bottom: 4px;
+}
+[dir="rtl"] ul#tabs {
+  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8986,6 +8990,16 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
+}
+[dir="rtl"] .list_toolbar .tree-buttons {
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-right {
+  padding-top: 1px;
+  float: left !important;
+}
+[dir="rtl"] .list_toolbar .pull-left {
+  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9122,6 +9136,9 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
+[dir="rtl"] #tree-selector a {
+  float: right;
+}
 #button-select-all {
   min-width: 50px;
 }
@@ -9211,6 +9228,9 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
+[dir="rtl"] #new-menu {
+  text-align: right;
+}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9255,6 +9275,9 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
+}
+[dir="rtl"] #running .col-sm-8 {
+  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9551,6 +9574,7 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
+  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9571,11 +9595,6 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
-}
-@-moz-document url-prefix() {
-  div.inner_cell {
-    overflow-x: hidden;
-  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11246,7 +11265,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 20ex;
+  width: 21ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11558,6 +11577,7 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
+  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11571,6 +11591,9 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
+}
+.terminal-app .terminal .xterm-rows {
+  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11631,8 +11654,10 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11643,9 +11668,11 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11748,7 +11775,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">HTML</span>
@@ -11769,33 +11796,6 @@ div#notebook {
 </pre></div>
 
 </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt output_prompt">Out[1]:</div>
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<script>
-code_show=true; 
-function code_toggle() {
- if (code_show){
- $('div.input').hide();
- } else {
- $('div.input').show();
- }
- code_show = !code_show
-} 
-$( document ).ready(code_toggle);
-</script>
-<form action="javascript:code_toggle()"><input type="submit" value="Click here to toggle on/off the raw code."></form>
-</div>
-
-</div>
-
 </div>
 </div>
 
@@ -11832,14 +11832,14 @@ $( document ).ready(code_toggle);
 </li>
 <li><a href="#Dealing-with-outliers">Dealing with outliers</a></li>
 </ul>
-<p><strong>Input data:</strong> For this tutorial, we will use a medium sized protein data set of 614 genes and 48 species.</p>
-<h1 id="Summary-statistics-overview">Summary statistics overview<a class="anchor-link" href="#Summary-statistics-overview">&#182;</a></h1><p>As soons as you load you data into TriFusion and navigate to the <strong>Statistics</strong> module, the computation of general and gene specific summary statistics will start. This computation is being done in the backgroud, so feel free to perform other tasks in TriFusion while you wait. When finished, a summary statistic overview for the currently active data set will be displayed in the <strong>Statistics</strong> screen.</p>
+<p><strong>Input data:</strong> For this tutorial, we will use a medium sized protein data set of 614 genes and 48 species (You can download it <a href="https://github.com/ODiogoSilva/TriFusion-tutorials/raw/master/tutorials/Datasets/Process/medium_protein_dataset/medium_protein_dataset.zip">here</a>).</p>
+<h1 id="Summary-statistics-overview">Summary statistics overview<a class="anchor-link" href="#Summary-statistics-overview">&#182;</a></h1><p>As soons as you load your data into TriFusion and navigate to the <strong>Statistics</strong> module, the computation of general and gene specific summary statistics will start. This computation is being done in the backgroud, and unless you start to generate a plot or load more data into TriFusion, it will continue to do so. When finished, a summary statistic overview for the currently active data set will be displayed in the <strong>Statistics</strong> screen.</p>
 <h2 id="Overall-summary-statistics">Overall summary statistics<a class="anchor-link" href="#Overall-summary-statistics">&#182;</a></h2><figure>
     <br>
     <p style="font-size: 14px; text-align: center; font-weight: bold;">Click figure to animate</p>
     <img class="animation" width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_sum_stat_general.png" alt="Static Image" data-alt="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/gifs/stats_tutorial1_overall_stats.gif">
 </figure><p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_sum_stat_general.png"></p>
-<p>Information is sorted in three main cateagories: _General,_Missing data and <em>Sequence variation</em>.</p>
+<p>Information is sorted in three main cateagories: <em>General</em>, <em>Missing data</em> and <em>Sequence variation</em>.</p>
 <p>The values in the <em>General</em> section are mostly self-explanatory. We only note that the <em>Total alignment length</em> refers to the lenght of the alignment as a whole, not the sum of each sequence in the alignment.</p>
 <p>The <em>Missing data</em> section separates the role of gaps (usually denoted by "-" in the alignment file) and true missing data (usually "N" in nucleotide sequences and "X" in protein sequences). The <em>Gaps</em> and <em>Missing data</em> values refer to the total number of gaps or missing data across all sequences, not alignment columns. Therefore,the associated percentages provide the relationship between these values and the sum of total characters in the alignment (in this case, 48 * 350 725).</p>
 <p>The <em>Sequence variation</em> section provides the number of variable (at least one variant) and informative (one of the variants must be represented at least in two taxa) sites across the data set. In this case, these values correspond to the number of alignment columns, so percentages are relative to the <em>Total alignment length</em>.</p>
@@ -11868,8 +11868,8 @@ $( document ).ready(code_toggle);
 </ul>
 <p>For example, clicking the <em>Pairwise sequence similarity</em> button will ask you which plot type you wish to produce.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_all_plot_types.png"></p>
-<p>In this case, all three plot types are available. However, some plots will have only two plot types available, and other only one. It will depend on the analysis.</p>
-<h2 id="Executing-an-analysis">Executing an analysis<a class="anchor-link" href="#Executing-an-analysis">&#182;</a></h2><p>Let's explore the distribution of sequence similarity across our entire data set. Since we are interested in an average of the data set, click on the <strong>Average</strong> button. The computation of sequence similarity and segregating sites are some of the most computationally intensive in TriFusion, so this may take some time the first time. However, TriFusion uses a look-up table technique which considerably speeds up future computations of these analyses in the same session. Once complete, you should see a bar plot with the distribution and mean of the pairwise sequence similarity across the data set.</p>
+<p>In this case, all three plot types are available. However, some options will have only two plot types available, and others only one. It will depend on the analysis.</p>
+<h2 id="Executing-an-analysis">Executing an analysis<a class="anchor-link" href="#Executing-an-analysis">&#182;</a></h2><p>Let's explore the distribution of sequence similarity across our entire data set. Since we are interested in an average of the data set, click on the <strong>Average</strong> button. The computation of sequence similarity and segregating sites are some of the most computationally intensive in TriFusion, so this may take some time the first time. However, TriFusion uses a hash look-up table technique which considerably speeds up future computations of these analyses in the same session. Once complete, you should see a bar plot with the distribution and mean of the pairwise sequence similarity across the data set.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_sequence_sim_avg.png"></p>
 <h2 id="Quickly-changing-the-plot-type-for-the-current-analysis">Quickly changing the plot type for the current analysis<a class="anchor-link" href="#Quickly-changing-the-plot-type-for-the-current-analysis">&#182;</a></h2><p>If you want to change the plot type of the current analysis, there is a floating box in the top right of the screen.</p>
 <p><img width="90%" src="https://raw.githubusercontent.com/ODiogoSilva/TriFusion-tutorials/master/tutorials/images/stats_change_plot_type.png"></p>
@@ -11980,14 +11980,16 @@ To change the taxa data set to the newly define group, click in the dropdown men
 <div class="output">
 
 
-<div class="output_area"><div class="prompt"></div>
+<div class="output_area">
+<div class="prompt"></div>
 
 
 
-<div id="39e1b94c-4bf9-45c3-8efa-a8a5c687d6a8"></div>
+
+<div id="86ed57a7-8a0f-42ff-9d9a-b47fde72d30d"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#39e1b94c-4bf9-45c3-8efa-a8a5c687d6a8');
+var element = $('#86ed57a7-8a0f-42ff-9d9a-b47fde72d30d');
 var getGif = function() {
     var gif = [];
     $('.animation').each(function() {
@@ -12035,4 +12037,8 @@ $('figure').on('click', function() {
     </div>
   </div>
 </body>
+
+ 
+
+
 </html>
